@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tamires.Camejo/Desktop/HelloZupper/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_button_rounded.xml" value="0.1285" />
+        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_text_rounded.xml" value="0.1285" />
+        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_login.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_register.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>

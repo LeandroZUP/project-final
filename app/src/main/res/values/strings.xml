@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Hello Zupper</string>
+    <string name="e_mail">E-mail</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="senha">Senha</string>
+    <string name="ou">ou</string>
+    <string name="novo_por_aqui">É novo por aqui?</string>
+    <string name="novo_por_aqui_cadastre_se">É novo por aqui? Cadastre-se</string>
+    <string name="seu_nome">Seu nome</string>
+    <string name="salvar">SALVAR</string>
+    <string name="ja_tem_uma_conta_faca_a_login">Já tem uma conta? Faça login</string>
+    <string name="email_cadastrado">campo de coloca o seu email cadastrado</string>
 </resources>
