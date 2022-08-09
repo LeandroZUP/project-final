@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Hello Zupper</string>
+    <string name="description_image_splash">Imagem de fundo azul marinho com vários pontos banco e Escrito na frente Hello Zuuper e uma mão acenando</string>
     <string name="e_mail">E-mail</string>
     <string name="entrar">ENTRAR</string>
     <string name="senha">Senha</string>
