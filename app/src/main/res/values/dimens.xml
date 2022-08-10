@@ -16,4 +16,5 @@
     <dimen name="text_size_25">25sp</dimen>
     <dimen name="margin_79">79dp</dimen>
     <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
 </resources>

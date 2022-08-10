@@ -133,16 +133,30 @@
             app:layout_constraintTop_toBottomOf="@+id/bLogIn" />
 
         <TextView
-            android:id="@+id/register"
+            android:id="@+id/tvNew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16"
-            android:text="@string/novo_por_aqui_cadastre_se"
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/novo_por_aqui"
             android:textColor="@color/orange"
             android:textSize="@dimen/text_size_18"
             app:layout_constraintEnd_toEndOf="@+id/view2"
-            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintHorizontal_bias="0.176"
             app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/tvOu" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginStart="@dimen/margin_2"
+            android:text="@string/cadastre_se"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toEndOf="@+id/tvNew"
             app:layout_constraintTop_toBottomOf="@+id/tvOu" />
 
 
