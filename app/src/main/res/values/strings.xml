@@ -11,4 +11,8 @@
     <string name="salvar">SALVAR</string>
     <string name="ja_tem_uma_conta_faca_a_login">Já tem uma conta? Faça login</string>
     <string name="email_cadastrado">campo de coloca o seu email cadastrado</string>
+    <string name="name_zenity">Zenity</string>
+    <string name="title_text">ÚLTIMA CHAMA - PERSONA</string>
+    <string name="hora_text">13:45</string>
+    <string name="news_text">Chegamos no último dia do Persona!! Claro que você já preencheu, né?</string>
 </resources>
