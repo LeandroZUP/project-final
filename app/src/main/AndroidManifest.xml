@@ -25,7 +25,7 @@
             android:name=".ui.main.view.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".splash.SplashActivity"
+            android:name="br.com.zup.hellozupper.ui.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.HelloZupper.NoActionBar">
             <intent-filter>

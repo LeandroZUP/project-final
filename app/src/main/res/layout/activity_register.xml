@@ -116,7 +116,7 @@
             android:background="@drawable/custom_edit_text_rounded"
             android:drawableStart="@drawable/ic_action_lock"
             android:drawablePadding="@dimen/margin_12"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:paddingStart="@dimen/margin_12"
             android:paddingEnd="@dimen/margin_12"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +127,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/bLogIn"
+            android:id="@+id/bSave"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_42"
             android:layout_marginLeft="@dimen/margin_49"
@@ -144,17 +144,17 @@
             android:id="@+id/view"
             android:layout_width="@dimen/width_140"
             android:layout_height="@dimen/height_5"
-            android:layout_marginTop="@dimen/margin_44"
             android:layout_marginStart="@dimen/margin_49"
+            android:layout_marginTop="@dimen/margin_44"
             android:layout_marginEnd="@dimen/margin_2"
             android:background="@color/blue"
-            app:layout_constraintEnd_toStartOf="@+id/tvOu"
-            app:layout_constraintHorizontal_bias="0.375"
-            app:layout_constraintStart_toStartOf="@+id/bLogIn"
-            app:layout_constraintTop_toBottomOf="@+id/bLogIn" />
+            app:layout_constraintEnd_toStartOf="@+id/tvOr"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/bSave"
+            app:layout_constraintTop_toBottomOf="@+id/bSave" />
 
         <TextView
-            android:id="@+id/tvOu"
+            android:id="@+id/tvOr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_36"
@@ -166,7 +166,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bLogIn" />
+            app:layout_constraintTop_toBottomOf="@+id/bSave" />
 
         <View
             android:id="@+id/view2"
@@ -176,10 +176,10 @@
             android:layout_marginStart="@dimen/margin_2"
             android:layout_marginEnd="@dimen/margin_49"
             android:background="@color/blue"
-            app:layout_constraintEnd_toEndOf="@+id/bLogIn"
+            app:layout_constraintEnd_toEndOf="@+id/bSave"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvOu"
-            app:layout_constraintTop_toBottomOf="@+id/bLogIn" />
+            app:layout_constraintStart_toEndOf="@+id/tvOr"
+            app:layout_constraintTop_toBottomOf="@+id/bSave" />
 
         <TextView
             android:id="@+id/tvAccount"
@@ -192,7 +192,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/tvOu" />
+            app:layout_constraintTop_toBottomOf="@+id/tvOr" />
 
         <TextView
             android:id="@+id/tvLogin"
@@ -206,7 +206,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintHorizontal_bias="0.169"
             app:layout_constraintStart_toEndOf="@+id/tvAccount"
-            app:layout_constraintTop_toBottomOf="@+id/tvOu" />
+            app:layout_constraintTop_toBottomOf="@+id/tvOr" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

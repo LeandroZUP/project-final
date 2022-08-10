@@ -8,13 +8,9 @@ import br.com.zup.hellozupper.utils.LOGIN_ERROR_MESSAGE
 import br.com.zup.hellozupper.utils.PASSWORD_ERROR_MESSAGE
 import br.com.zup.hellozupper.domain.model.User
 import br.com.zup.hellozupper.domain.repository.AuthenticationRepository
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
-class LoginViewModel : ViewModel(){
+class LoginViewModel : ViewModel() {
     private val authenticationRepository = AuthenticationRepository()
-    val auth: FirebaseAuth = Firebase.auth
 
     private var _loginState = MutableLiveData<User>()
     val loginState: LiveData<User> = _loginState
@@ -22,24 +18,41 @@ class LoginViewModel : ViewModel(){
     private var _errorState = MutableLiveData<String>()
     val errorState: LiveData<String> = _errorState
 
-    fun validateDataUser(user: User) : Boolean {
-        when {
-            user.email.isEmpty() -> {
-                _errorState.value = EMAIL_ERROR_MESSAGE
-                return false
+    fun validateDataUser(user: User): Boolean {
+        return when {
+            validateEmailField(user) -> {
+                false
             }
-            user.password.isEmpty() -> {
-                _errorState.value = PASSWORD_ERROR_MESSAGE
-                return false
+            validatePasswordField(user) -> {
+
+                false
             }
             else -> {
-                loginUser(auth, user)
-                return true
+                loginUser(user)
+                true
             }
         }
     }
 
-    private fun loginUser(auth: FirebaseAuth, user: User) {
+    private fun validateEmailField(user: User): Boolean {
+
+        if (user.email.isEmpty()) {
+            _errorState.value = EMAIL_ERROR_MESSAGE
+            return true
+        }
+        return false
+    }
+
+    private fun validatePasswordField(user: User): Boolean {
+
+        if (user.password.isEmpty()) {
+            _errorState.value = PASSWORD_ERROR_MESSAGE
+            return true
+        }
+        return false
+    }
+
+    private fun loginUser(user: User) {
         try {
             authenticationRepository.loginUser(
                 user.email,

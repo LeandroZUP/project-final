@@ -44,7 +44,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmail"
             app:layout_constraintVertical_bias="0.0"
-
             />
 
         <TextView
@@ -71,7 +70,7 @@
             android:background="@drawable/custom_edit_text_rounded"
             android:drawableStart="@drawable/ic_action_lock"
             android:drawablePadding="@dimen/margin_12"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:paddingStart="@dimen/margin_12"
             android:paddingEnd="@dimen/margin_12"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,12 +102,12 @@
             android:layout_marginStart="@dimen/margin_49"
             android:layout_marginEnd="@dimen/margin_2"
             android:background="@color/blue"
-            app:layout_constraintEnd_toStartOf="@+id/tvOu"
+            app:layout_constraintEnd_toStartOf="@+id/tvOr"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bEnter" />
 
         <TextView
-            android:id="@+id/tvOu"
+            android:id="@+id/tvOr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_36"
@@ -131,7 +130,7 @@
             android:layout_marginEnd="@dimen/margin_49"
             android:background="@color/blue"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvOu"
+            app:layout_constraintStart_toEndOf="@+id/tvOr"
             app:layout_constraintTop_toBottomOf="@+id/bEnter" />
 
         <TextView
@@ -145,7 +144,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintHorizontal_bias="0.176"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/tvOu" />
+            app:layout_constraintTop_toBottomOf="@+id/tvOr" />
 
         <TextView
             android:id="@+id/tvRegister"
@@ -159,7 +158,7 @@
             app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintHorizontal_bias="0.169"
             app:layout_constraintStart_toEndOf="@+id/tvNew"
-            app:layout_constraintTop_toBottomOf="@+id/tvOu" />
+            app:layout_constraintTop_toBottomOf="@+id/tvOr" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

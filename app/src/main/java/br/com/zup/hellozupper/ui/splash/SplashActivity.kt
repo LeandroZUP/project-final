@@ -1,4 +1,4 @@
-package br.com.zup.hellozupper.splash
+package br.com.zup.hellozupper.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

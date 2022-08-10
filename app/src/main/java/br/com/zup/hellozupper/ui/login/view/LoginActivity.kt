@@ -27,7 +27,6 @@ class LoginActivity : AppCompatActivity() {
         initObservers()
         clickOntextRegister()
         clickOnEnterButton()
-
     }
 
     private fun clickOntextRegister() {
