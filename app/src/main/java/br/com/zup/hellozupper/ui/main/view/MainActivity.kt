@@ -9,7 +9,7 @@ import br.com.zup.hellozupper.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {
-    val viewModel: MainViewModel by lazy {
+    private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this)[MainViewModel::class.java]
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getPillars()
+        viewModel.getNotReadNews()
 
         viewModel.status.observe(this){
             val texto = findViewById<TextView>(R.id.tvTeste)
