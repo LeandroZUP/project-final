@@ -11,4 +11,5 @@
     <string name="salvar">SALVAR</string>
     <string name="ja_tem_uma_conta_faca_a_login">Já tem uma conta? Faça login</string>
     <string name="email_cadastrado">campo de coloca o seu email cadastrado</string>
+    <string name="criar_uma_conta">Criar uma conta</string>
 </resources>
