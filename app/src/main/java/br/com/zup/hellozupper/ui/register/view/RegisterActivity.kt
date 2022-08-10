@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.hellozupper.databinding.ActivityRegisterBinding
 import br.com.zup.hellozupper.domain.model.User
+import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import br.com.zup.hellozupper.ui.main.view.MainActivity
 import br.com.zup.hellozupper.ui.register.viewmodel.RegisterViewModel
 import br.com.zup.hellozupper.utils.USER_KEY
@@ -24,8 +25,17 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
         initObservers()
         clickOnSaveButton()
+        clickOntextLogin()
+    }
+    private fun clickOntextLogin() {
+        binding.tvLogin.setOnClickListener {
+            goToLogin()
+        }
     }
 
+    private fun goToLogin() {
+        startActivity(Intent(this, LoginActivity ::class.java))
+    }
     private fun clickOnSaveButton() {
         binding.bSave.setOnClickListener {
             val user = getDataUser()
