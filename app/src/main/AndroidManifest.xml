@@ -20,7 +20,6 @@
             android:exported="false" />
         <activity
             android:name=".splash.SplashActivity"
-            android:theme="@style/Theme.HelloZupper.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
