@@ -178,15 +178,30 @@
             app:layout_constraintTop_toBottomOf="@+id/bLogIn" />
 
         <TextView
+            android:id="@+id/tvAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16"
-            android:text="@string/ja_tem_uma_conta_faca_a_login"
+            android:layout_marginTop="16dp"
+            android:text="@string/ja_tem_uma_conta"
             android:textColor="@color/orange"
             android:textSize="@dimen/text_size_18"
             app:layout_constraintEnd_toEndOf="@+id/view2"
-            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/tvOu" />
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_2"
+            android:text="@string/criar_uma_conta"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toEndOf="@+id/tvAccount"
             app:layout_constraintTop_toBottomOf="@+id/tvOu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
