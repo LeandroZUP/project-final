@@ -22,6 +22,9 @@
             android:name=".ui.login.view.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.main.view.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.HelloZupper.NoActionBar">
