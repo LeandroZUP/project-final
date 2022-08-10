@@ -5,10 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import br.com.zup.hellozupper.data.datasourse.local.dao.HelloZupperDAO
-import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.data.model.FeedEntity
 
 @Database(entities = [FeedEntity::class], version = 1)
+
 abstract class HelloZupperDatabase : RoomDatabase() {
     abstract fun helloZupperDao(): HelloZupperDAO
 
