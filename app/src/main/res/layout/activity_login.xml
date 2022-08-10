@@ -100,10 +100,11 @@
             android:layout_width="@dimen/width_140"
             android:layout_height="@dimen/height_5"
             android:layout_marginTop="@dimen/margin_44"
+            android:layout_marginStart="@dimen/margin_49"
+            android:layout_marginEnd="@dimen/margin_2"
             android:background="@color/blue"
             app:layout_constraintEnd_toStartOf="@+id/tvOu"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/bLogIn"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bLogIn" />
 
         <TextView
@@ -126,9 +127,10 @@
             android:layout_width="@dimen/width_140"
             android:layout_height="@dimen/height_5"
             android:layout_marginTop="@dimen/margin_44"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_marginEnd="@dimen/margin_49"
             android:background="@color/blue"
-            app:layout_constraintEnd_toEndOf="@+id/bLogIn"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvOu"
             app:layout_constraintTop_toBottomOf="@+id/bLogIn" />
 

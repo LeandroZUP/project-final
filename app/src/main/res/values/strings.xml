@@ -10,7 +10,7 @@
     <string name="seu_nome">Seu nome</string>
     <string name="salvar">SALVAR</string>
     <string name="ja_tem_uma_conta">Já tem uma conta?</string>
-    <string name="faca_a_login">Faça login</string>
+    <string name="faca_o_login"><u>Faça o login</u></string>
     <string name="email_cadastrado">campo de coloca o seu email cadastrado</string>
-    <string name="criar_uma_conta"><u>Criar uma conta</u></string>
+    <string name="criar_uma_conta">Criar uma conta</string>
 </resources>
