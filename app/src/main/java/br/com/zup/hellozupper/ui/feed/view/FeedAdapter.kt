@@ -18,7 +18,14 @@ class FeedAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val itemFeed = feedList[position]
         holder.showDataFeed(itemFeed)
-        holder.saveReadNews(itemFeed, saveReadNews)
+        holder.binding.ivReadNews.setOnClickListener {
+            saveReadNews(itemFeed)
+            if(feedList.size != 0) {
+                feedList.remove(itemFeed)
+                notifyItemRemoved(position)
+                notifyItemRangeChanged(position, feedList.size)
+            }
+        }
     }
 
     override fun getItemCount(): Int = feedList.size
@@ -28,7 +35,7 @@ class FeedAdapter(
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(val binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun showDataFeed(feed: Feed) {
             binding.tvSenderFeed.text = feed.sender
             binding.tvTitleFeed.text = feed.title
@@ -36,10 +43,10 @@ class FeedAdapter(
             binding.tvContentFeed.text = feed.content
         }
 
-        fun saveReadNews(news: Feed, saveReadNews: (news: Feed) -> Unit) {
-            binding.ivReadNews.setOnClickListener {
-                saveReadNews(news)
-            }
-        }
+//        fun saveReadNews(news: Feed, saveReadNews: (news: Feed) -> Unit) {
+//            binding.ivReadNews.setOnClickListener {
+//                saveReadNews(news)
+//            }
+//        }
     }
 }

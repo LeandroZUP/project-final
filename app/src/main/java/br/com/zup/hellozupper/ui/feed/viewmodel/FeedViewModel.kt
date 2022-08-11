@@ -47,10 +47,14 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
 
     fun saveReadNews(news: Feed) {
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                feedUseCase.saveReadNewsIndex(news)
+            try {
+                withContext(Dispatchers.IO) {
+                    feedUseCase.saveReadNewsIndex(news)
+                }
+                _readNews.value = MESSAGE_SUCCESS_NEWS_READ_ADDED
+            }catch (e: Exception) {
+                _readNews.value = "Fail"
             }
         }
-        _readNews.value = MESSAGE_SUCCESS_NEWS_READ_ADDED
     }
 }
