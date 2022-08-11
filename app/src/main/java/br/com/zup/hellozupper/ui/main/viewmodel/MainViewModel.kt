@@ -18,7 +18,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
             val response = withContext(Dispatchers.IO){
                 feedUsecase.getNewsNotRead()
             }
-            status.value = response
+//            status.value = response
         }
     }
 }

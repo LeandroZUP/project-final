@@ -1,12 +1,15 @@
 package br.com.zup.hellozupper.ui.feed.view
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.databinding.ActivityFeedBinding
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
+import br.com.zup.hellozupper.ui.viewstate.ViewState
+import com.google.android.material.snackbar.Snackbar
 
 class FeedActivity : AppCompatActivity() {
     private val adapter: FeedAdapter by lazy {
@@ -36,7 +39,11 @@ class FeedActivity : AppCompatActivity() {
 
     private fun observers() {
         viewModel.status.observe(this){
-            adapter.updateFeedList(it)
+            when(it) {
+                is ViewState.Success -> adapter.updateFeedList(it.data)
+                is ViewState.Error -> Snackbar.make(binding.root, "${it.throwable.message}", Snackbar.LENGTH_SHORT).show()
+                else -> {}
+            }
         }
     }
 
