@@ -3,6 +3,7 @@ package br.com.zup.hellozupper.ui.feed.view
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.hellozupper.data.model.Feed
@@ -32,22 +33,35 @@ class FeedActivity : AppCompatActivity() {
         observers()
     }
 
-    private fun showRecyclerView(){
+    private fun showRecyclerView() {
         binding.rvFeed.adapter = adapter
         binding.rvFeed.layoutManager = LinearLayoutManager(this)
     }
 
     private fun observers() {
-        viewModel.status.observe(this){
-            when(it) {
+        viewModel.status.observe(this) {
+            when (it) {
                 is ViewState.Success -> adapter.updateFeedList(it.data)
-                is ViewState.Error -> Snackbar.make(binding.root, "${it.throwable.message}", Snackbar.LENGTH_SHORT).show()
+                is ViewState.Error -> Snackbar.make(
+                    binding.root,
+                    "${it.throwable.message}",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+                else -> {}
+            }
+        }
+
+        viewModel.loading.observe(this) {
+            when (it) {
+                is ViewState.Loading -> {
+                    binding.pbLoading.isVisible = it.loading == true
+                }
                 else -> {}
             }
         }
     }
 
-    private fun saveReadNews(news: Feed){
+    private fun saveReadNews(news: Feed) {
         viewModel.saveReadNews(news)
     }
 }
