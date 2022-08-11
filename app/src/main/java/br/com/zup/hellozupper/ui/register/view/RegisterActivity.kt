@@ -1,13 +1,13 @@
 package br.com.zup.hellozupper.ui.register.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.hellozupper.databinding.ActivityRegisterBinding
 import br.com.zup.hellozupper.domain.model.User
+import br.com.zup.hellozupper.ui.feed.view.FeedActivity
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
-import br.com.zup.hellozupper.ui.main.view.MainActivity
 import br.com.zup.hellozupper.ui.register.viewmodel.RegisterViewModel
 import br.com.zup.hellozupper.utils.USER_KEY
 import com.google.android.material.snackbar.Snackbar
@@ -27,6 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         clickOnSaveButton()
         clickOntextLogin()
     }
+
     private fun clickOntextLogin() {
         binding.tvLogin.setOnClickListener {
             goToLogin()
@@ -34,8 +35,9 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun goToLogin() {
-        startActivity(Intent(this, LoginActivity ::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
     }
+
     private fun clickOnSaveButton() {
         binding.bSave.setOnClickListener {
             val user = getDataUser()
@@ -62,7 +64,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun goToMain(user: User) {
-        val intent = Intent(this, MainActivity::class.java).apply {
+        val intent = Intent(this, FeedActivity::class.java).apply {
             putExtra(USER_KEY, user)
         }
         startActivity(intent)

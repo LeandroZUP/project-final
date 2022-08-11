@@ -1,15 +1,15 @@
 package br.com.zup.hellozupper.ui.login.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import br.com.zup.hellozupper.utils.USER_KEY
 import br.com.zup.hellozupper.databinding.ActivityLoginBinding
 import br.com.zup.hellozupper.domain.model.User
+import br.com.zup.hellozupper.ui.feed.view.FeedActivity
 import br.com.zup.hellozupper.ui.login.viewmodel.LoginViewModel
-import br.com.zup.hellozupper.ui.main.view.MainActivity
 import br.com.zup.hellozupper.ui.register.view.RegisterActivity
+import br.com.zup.hellozupper.utils.USER_KEY
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToMain(user: User) {
-        val intent = Intent(this, MainActivity::class.java).apply {
+        val intent = Intent(this, FeedActivity::class.java).apply {
             putExtra(USER_KEY, user)
         }
         startActivity(intent)

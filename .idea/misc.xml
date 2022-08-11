@@ -4,12 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tamires.Camejo/Desktop/HelloZupper/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_button_rounded.xml" value="0.1285" />
-        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_text_rounded.xml" value="0.1285" />
-        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_login.xml" value="0.3805309734513274" />
-        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_register.xml" value="0.5" />
-        <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_splash.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/activity_feed.xml" value="0.175" />
+        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/activity_login.xml" value="0.175" />
+        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/activity_main.xml" value="0.26875" />
+        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/feed_item.xml" value="0.28112449799196787" />
+        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/menu/menu.xml" value="0.17395833333333333" />
       </map>
     </option>
   </component>
