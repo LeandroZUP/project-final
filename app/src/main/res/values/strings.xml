@@ -6,14 +6,16 @@
     <string name="senha">Senha</string>
     <string name="ou">ou</string>
     <string name="novo_por_aqui">É novo por aqui?</string>
-    <string name="novo_por_aqui_cadastre_se">É novo por aqui? Cadastre-se</string>
+    <string name="cadastre_se"><u>Cadastre-se</u></string>
     <string name="seu_nome">Seu nome</string>
     <string name="salvar">SALVAR</string>
-    <string name="ja_tem_uma_conta_faca_a_login">Já tem uma conta? Faça login</string>
+    <string name="ja_tem_uma_conta">Já tem uma conta?</string>
+    <string name="faca_o_login"><u>Faça o login</u></string>
     <string name="email_cadastrado">campo de coloca o seu email cadastrado</string>
     <string name="name_zenity">Zenity</string>
     <string name="title_text">ÚLTIMA CHAMA - PERSONA</string>
     <string name="hora_text">13:45</string>
     <string name="news_text">Chegamos no último dia do Persona!! Claro que você já preencheu, né?</string>
     <string name="bookmark">Bookmark de mensagem lida.</string>
+    <string name="criar_uma_conta">Criar uma conta</string>
 </resources>
