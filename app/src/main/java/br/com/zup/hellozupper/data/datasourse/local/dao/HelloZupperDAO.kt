@@ -9,7 +9,7 @@ import br.com.zup.hellozupper.data.model.FeedEntity
 @Dao
 interface HelloZupperDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun saveReadNewsIndex(feed: FeedEntity)
+    fun saveReadNewsIndex(news: FeedEntity)
 
     @Query("SELECT * FROM feed_table")
     fun getAllReadNews(): List<FeedEntity>

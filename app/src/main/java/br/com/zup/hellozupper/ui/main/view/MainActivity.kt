@@ -5,7 +5,7 @@ import android.os.Bundle
 import br.com.zup.hellozupper.R
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import br.com.zup.hellozupper.MainViewModel
+import br.com.zup.hellozupper.ui.main.viewmodel.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {
