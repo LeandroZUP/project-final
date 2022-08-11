@@ -27,6 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         clickOnSaveButton()
         clickOntextLogin()
     }
+
     private fun clickOntextLogin() {
         binding.tvLogin.setOnClickListener {
             goToLogin()
@@ -34,8 +35,9 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun goToLogin() {
-        startActivity(Intent(this, LoginActivity ::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
     }
+
     private fun clickOnSaveButton() {
         binding.bSave.setOnClickListener {
             val user = getDataUser()

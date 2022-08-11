@@ -42,11 +42,5 @@ class FeedAdapter(
             binding.tvDateFeed.text = feed.date
             binding.tvContentFeed.text = feed.content
         }
-
-//        fun saveReadNews(news: Feed, saveReadNews: (news: Feed) -> Unit) {
-//            binding.ivReadNews.setOnClickListener {
-//                saveReadNews(news)
-//            }
-//        }
     }
 }
