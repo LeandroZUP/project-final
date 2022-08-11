@@ -59,6 +59,10 @@ class FeedActivity : AppCompatActivity() {
                 else -> {}
             }
         }
+
+        viewModel.readNews.observe(this) {
+            Snackbar.make(binding.root, it, Snackbar.LENGTH_SHORT).show()
+        }
     }
 
     private fun saveReadNews(news: Feed) {
