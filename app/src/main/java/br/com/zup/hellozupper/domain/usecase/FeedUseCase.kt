@@ -2,9 +2,10 @@ package br.com.zup.hellozupper.domain.usecase
 
 import android.app.Application
 import br.com.zup.hellozupper.data.model.Feed
+import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.domain.repository.FeedRepository
 
-class FeedUsecase(application: Application) {
+class FeedUseCase(application: Application) {
     private val feedRepository = FeedRepository(application)
 
     suspend fun getNewsNotRead(): List<Feed> {
@@ -14,5 +15,10 @@ class FeedUsecase(application: Application) {
         return listFeedAPI.filterNot {
             listFeedDB.contains(it.id)
         }
+    }
+
+    fun saveReadNewsIndex(news: Feed) {
+        val feedDB = FeedEntity(news.id)
+        feedRepository.saveReadNewsIndex(feedDB)
     }
 }

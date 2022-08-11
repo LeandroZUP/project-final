@@ -15,7 +15,7 @@
         android:layout_margin="@dimen/margin_8">
 
         <TextView
-            android:id="@+id/tvNameFeed"
+            android:id="@+id/tvSenderFeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -26,24 +26,25 @@
             tools:text="@string/name_zenity" />
 
         <TextView
-            android:id="@+id/tvDataFeed"
+            android:id="@+id/tvDateFeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="224dp"
             android:textSize="@dimen/size_12"
-            app:layout_constraintBottom_toBottomOf="@+id/tvNameFeed"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSenderFeed"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="10/08/2022" />
 
         <TextView
-            android:id="@+id/tvHoraFeed"
+            android:id="@+id/tvTimeFeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            tools:text="@string/hora_text"
             android:textSize="@dimen/size_12"
-            app:layout_constraintStart_toEndOf="@+id/tvDataFeed"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/ivReadNews"
+            app:layout_constraintStart_toEndOf="@+id/tvDateFeed"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/hora_text" />
 
         <TextView
             android:id="@+id/tvTitleFeed"
@@ -52,14 +53,14 @@
             android:layout_marginTop="@dimen/margin_48"
             android:textColor="@color/orange"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tvHoraFeed"
+            app:layout_constraintBottom_toTopOf="@+id/tvTimeFeed"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDataFeed"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateFeed"
             tools:text="@string/title_text" />
 
         <TextView
-            android:id="@+id/tvFeed"
+            android:id="@+id/tvContentFeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_24"
@@ -71,12 +72,13 @@
             app:layout_constraintTop_toTopOf="@+id/tvTitleFeed" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivReadNews"
             android:layout_width="@dimen/margin_24"
             android:layout_height="@dimen/margin_24"
             android:src="@drawable/ic_bookmark"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/bookmark" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
