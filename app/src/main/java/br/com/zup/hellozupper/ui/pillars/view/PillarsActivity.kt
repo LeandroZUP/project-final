@@ -12,4 +12,6 @@ class PillarsActivity : AppCompatActivity() {
         binding = ActivityPillarsBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
+
 }

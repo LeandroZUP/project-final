@@ -1,6 +1,7 @@
 package br.com.zup.hellozupper.ui.home.view
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -29,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
         clickOnButtonBenefit()
         clickOnButtonFeed()
         clickOnButtonProgram()
+        clickOnImageWhatsapp()
     }
 
     private fun clickOnButtonOurDNA() {
@@ -49,6 +51,21 @@ class HomeActivity : AppCompatActivity() {
 
     private fun goToBenefit() {
         startActivity(Intent(this, BenefitActivity::class.java))
+    }
+
+    private fun clickOnImageWhatsapp() {
+        binding.ivWhatsapp.setOnClickListener {
+            goToWhatsapp()
+        }
+    }
+
+    private fun goToWhatsapp() {
+        val urlWhatsapp =
+            "https://api.whatsapp.com/send?phone=3498319866&text= Olá meu nome e ${viewModel.getUserName()}\n" +
+                    "Email: ${viewModel.getUserEmail()}"
+        intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(urlWhatsapp)
+        startActivity(intent)
     }
 
     private fun clickOnButtonFeed() {
