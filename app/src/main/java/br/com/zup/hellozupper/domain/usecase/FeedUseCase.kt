@@ -26,6 +26,15 @@ class FeedUseCase(application: Application) {
         }
     }
 
+    suspend fun getAllNews(): ViewState<List<Feed>> {
+        return try {
+
+            ViewState.Success(feedRepository.getAllNewsNetwork())
+        }catch (e: Exception) {
+            ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
+        }
+    }
+
     fun saveReadNewsIndex(news: Feed) {
         val feedDB = FeedEntity(news.id)
         feedRepository.saveReadNewsIndex(feedDB)

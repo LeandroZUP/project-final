@@ -11,12 +11,8 @@ import br.com.zup.hellozupper.ui.MESSAGE_FAIL_LOAD_NEWS_LIST
 import br.com.zup.hellozupper.ui.MESSAGE_SUCCESS_NEWS_READ_ADDED
 import br.com.zup.hellozupper.ui.viewstate.ViewState
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Exception
-import java.sql.Time
-import java.util.concurrent.TimeUnit
 
 class FeedViewModel(application: Application) : AndroidViewModel(application) {
     private val feedUseCase = FeedUseCase(application)
@@ -28,6 +24,10 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _loading = MutableLiveData<ViewState<Boolean>>()
     var loading: LiveData<ViewState<Boolean>> = _loading
+
+    fun getSearchListNews(): ViewState<List<Feed>>? {
+        return _status.value
+    }
 
     fun getNotReadNews() {
         _loading.value = ViewState.Loading(true)
@@ -54,6 +54,22 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
                 _readNews.value = MESSAGE_SUCCESS_NEWS_READ_ADDED
             }catch (e: Exception) {
                 _readNews.value = "Fail"
+            }
+        }
+    }
+
+    fun getAllReadNews() {
+        _loading.value = ViewState.Loading(true)
+        viewModelScope.launch {
+            try {
+                val response = withContext(Dispatchers.IO) {
+                    feedUseCase.getAllNews()
+                }
+                _status.value = response
+            } catch (e: Exception) {
+                _status.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
+            } finally {
+                _loading.value = ViewState.Loading(false)
             }
         }
     }
