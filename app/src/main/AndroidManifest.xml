@@ -25,7 +25,7 @@
             android:name=".ui.login.view.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.view.MainActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
             android:name="br.com.zup.hellozupper.ui.splash.SplashActivity"

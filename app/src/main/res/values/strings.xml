@@ -19,4 +19,9 @@
     <string name="bookmark">Bookmark de mensagem lida.</string>
     <string name="criar_uma_conta">Criar uma conta</string>
     <string name="search">Search</string>
+    <string name="nosso_dna_text">Nosso DNA</string>
+    <string name="benefits_text">Benefícios</string>
+    <string name="programs_text">Programas</string>
+    <string name="feed_text">Feed</string>
+    <string name="description_image_home">Imagem com o símbolo do whatsapp, escrito ao lado: fale com o tio CAZ.</string>
 </resources>
