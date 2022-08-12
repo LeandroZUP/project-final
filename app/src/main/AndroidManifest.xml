@@ -16,7 +16,13 @@
         android:theme="@style/Theme.HelloZupper"
         tools:targetApi="31">
         <activity
-            android:name=".PillarsActivity"
+            android:name=".ui.program.view.ProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.benefit.view.BenefitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pillars.view.PillarsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.register.view.RegisterActivity"

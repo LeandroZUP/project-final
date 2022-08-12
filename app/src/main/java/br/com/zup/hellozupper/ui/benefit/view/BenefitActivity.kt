@@ -2,10 +2,14 @@ package br.com.zup.hellozupper.ui.benefit.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.zup.hellozupper.databinding.ActivityBenefitBinding
 
 class BenefitActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBenefitBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_benefit)
+        binding = ActivityBenefitBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
