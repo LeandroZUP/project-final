@@ -1,4 +1,4 @@
-package br.com.zup.hellozupper.ui.home
+package br.com.zup.hellozupper.ui.home.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,4 +11,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
     }
+
+
 }

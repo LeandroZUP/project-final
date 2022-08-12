@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.hellozupper.databinding.ActivityRegisterBinding
 import br.com.zup.hellozupper.domain.model.User
-import br.com.zup.hellozupper.ui.home.HomeActivity
+import br.com.zup.hellozupper.ui.home.view.HomeActivity
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import br.com.zup.hellozupper.ui.register.viewmodel.RegisterViewModel
 import br.com.zup.hellozupper.utils.USER_KEY
