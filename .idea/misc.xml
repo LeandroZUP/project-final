@@ -4,11 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tamires.Camejo/Desktop/HelloZupper/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/activity_feed.xml" value="0.175" />
-        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/activity_login.xml" value="0.175" />
-        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/activity_main.xml" value="0.26875" />
-        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/layout/feed_item.xml" value="0.28112449799196787" />
-        <entry key="..\:/Users/daniel.souza/Documents/project-final/app/src/main/res/menu/menu.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/drawable/ic_check.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/activity_benefit.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/activity_benefit_detail.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/benefit_item.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/feed_item.xml" value="0.1" />
       </map>
     </option>
   </component>

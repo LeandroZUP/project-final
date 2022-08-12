@@ -19,4 +19,12 @@
     <string name="bookmark">Bookmark de mensagem lida.</string>
     <string name="criar_uma_conta">Criar uma conta</string>
     <string name="search">Search</string>
+    <string name="title_benefit">Benefícios</string>
+    <string name="tv_benefit_detail">[DETALHES DOS BENEFICIOS]</string>
+    <string name="benefit_detail_list">Lista de Detalhes do Benefícios aosnfaosndfoajnsfoansofn</string>
+    <string name="career">Carreira Acelerada</string>
+    <string name="health">Saúde e Bem-estar</string>
+    <string name="comfort">Conforto Financeiro</string>
+    <string name="have_fun">Have fun and relax</string>
+    <string name="cd_check">Check verde</string>
 </resources>

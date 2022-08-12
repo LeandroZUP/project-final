@@ -16,6 +16,12 @@
         android:theme="@style/Theme.HelloZupper"
         tools:targetApi="31">
         <activity
+            android:name=".ui.benefit.viewmodel.BenefitDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.benefit.view.BenefitActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.register.view.RegisterActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.benefit.view.BenefitActivity"
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/btnCareer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_49"
+        android:layout_marginLeft="@dimen/margin_49"
+        android:layout_marginTop="@dimen/margin_316"
+        android:layout_marginRight="@dimen/margin_49"
+        android:background="@drawable/custom_edit_button_rounded"
+        android:text="@string/career"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnHealth"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_49"
+        android:layout_marginLeft="@dimen/margin_49"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginRight="@dimen/margin_49"
+        android:background="@drawable/custom_edit_button_rounded"
+        android:text="@string/health"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCareer" />
+
+    <Button
+        android:id="@+id/btnComfort"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_49"
+        android:layout_marginLeft="@dimen/margin_49"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginRight="@dimen/margin_49"
+        android:background="@drawable/custom_edit_button_rounded"
+        android:text="@string/comfort"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHealth" />
+
+    <Button
+        android:id="@+id/btnHaveFun"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_49"
+        android:layout_marginLeft="@dimen/margin_49"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginRight="@dimen/margin_49"
+        android:background="@drawable/custom_edit_button_rounded"
+        android:text="@string/have_fun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnComfort" />
+</androidx.constraintlayout.widget.ConstraintLayout>
