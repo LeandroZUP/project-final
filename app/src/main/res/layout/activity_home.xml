@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_world"
+    tools:context=".ui.home.view.HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnDna"
+            android:layout_width="@dimen/margin_250"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:text="@string/nosso_dna_text"
+            android:layout_marginTop="@dimen/margin_156"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnBenefits"
+            android:layout_width="@dimen/margin_250"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_green"
+            android:text="@string/benefits_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDna" />
+
+        <Button
+            android:id="@+id/btnFeed"
+            android:layout_width="@dimen/margin_250"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="@string/feed_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBenefits" />
+
+        <Button
+            android:id="@+id/btnPrograms"
+            android:layout_width="@dimen/margin_250"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange_light"
+            android:text="@string/programs_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFeed" />
+
+        <ImageView
+            android:id="@+id/ivWhatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description_image_home"
+            android:layout_marginTop="@dimen/margin_48"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPrograms"
+            app:srcCompat="@drawable/ic_whatsap" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

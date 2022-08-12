@@ -16,10 +16,16 @@
         android:theme="@style/Theme.HelloZupper"
         tools:targetApi="31">
         <activity
+            android:name=".ui.program.view.ProgramActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.benefit.viewmodel.BenefitDetailActivity"
             android:exported="false" />
         <activity
             android:name=".ui.benefit.view.BenefitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pillars.view.PillarsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.register.view.RegisterActivity"
@@ -31,7 +37,7 @@
             android:name=".ui.login.view.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.view.MainActivity"
+            android:name=".ui.home.view.HomeActivity"
             android:exported="false" />
         <activity
             android:name="br.com.zup.hellozupper.ui.splash.SplashActivity"

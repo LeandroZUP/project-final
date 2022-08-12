@@ -13,8 +13,7 @@ class BenefitActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         binding = ActivityBenefitBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        super.onCreate(savedInstanceState)
     }
 }
