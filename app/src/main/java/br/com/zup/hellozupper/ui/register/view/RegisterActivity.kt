@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.hellozupper.databinding.ActivityRegisterBinding
 import br.com.zup.hellozupper.domain.model.User
-import br.com.zup.hellozupper.ui.feed.view.FeedActivity
+import br.com.zup.hellozupper.ui.home.view.HomeActivity
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import br.com.zup.hellozupper.ui.register.viewmodel.RegisterViewModel
 import br.com.zup.hellozupper.utils.USER_KEY
@@ -55,7 +55,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun initObservers() {
         viewModel.registerState.observe(this) {
-            goToMain(it)
+            goToHome(it)
         }
 
         viewModel.errorState.observe(this) {
@@ -63,8 +63,8 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun goToMain(user: User) {
-        val intent = Intent(this, FeedActivity::class.java).apply {
+    private fun goToHome(user: User) {
+        val intent = Intent(this, HomeActivity::class.java).apply {
             putExtra(USER_KEY, user)
         }
         startActivity(intent)
