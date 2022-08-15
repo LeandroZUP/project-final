@@ -19,9 +19,6 @@
             android:name=".ui.program.view.ProgramActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.benefit.viewmodel.BenefitDetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.benefit.view.BenefitActivity"
             android:exported="false" />
         <activity
