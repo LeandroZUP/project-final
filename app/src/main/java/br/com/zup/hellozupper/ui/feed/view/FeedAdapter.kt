@@ -2,9 +2,12 @@ package br.com.zup.hellozupper.ui.feed.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.databinding.FeedItemBinding
+import com.squareup.picasso.Picasso
 
 class FeedAdapter(
     private var feedList: MutableList<Feed> = mutableListOf(),
@@ -21,9 +24,11 @@ class FeedAdapter(
         holder.binding.ivReadNews.setOnClickListener {
             saveReadNews(itemFeed)
             if(feedList.size != 0) {
-                feedList.remove(itemFeed)
-                notifyItemRemoved(position)
-                notifyItemRangeChanged(position, feedList.size)
+                if(!itemFeed.read) {
+                    feedList.remove(itemFeed)
+                    notifyItemRemoved(position)
+                    notifyItemRangeChanged(position, feedList.size)
+                }
             }
         }
     }
@@ -41,6 +46,17 @@ class FeedAdapter(
             binding.tvTitleFeed.text = feed.title
             binding.tvDateFeed.text = feed.date
             binding.tvContentFeed.text = feed.content
+
+            binding.ivReadNews.setImageDrawable(
+                ContextCompat.getDrawable(
+                    binding.root.context,
+                    if (feed.read){
+                        R.drawable.ic_bookmark_read
+                    }else{
+                        R.drawable.ic_bookmark
+                    }
+                )
+            )
         }
     }
 }

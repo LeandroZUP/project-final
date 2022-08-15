@@ -11,17 +11,18 @@ import java.lang.Exception
 class FeedUseCase(application: Application) {
     private val feedRepository = FeedRepository(application)
 
+
     suspend fun getNewsNotRead(): ViewState<List<Feed>> {
         return try {
             val listFeedAPI = feedRepository.getAllNewsNetwork()
             val listFeedDB = feedRepository.getAllReadNews().map { it.id }
 
-            val notReadNewsList =  listFeedAPI.filterNot {
+            val notReadNewsList = listFeedAPI.filterNot {
                 listFeedDB.contains(it.id)
             }
 
             ViewState.Success(notReadNewsList)
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
         }
     }
@@ -29,14 +30,13 @@ class FeedUseCase(application: Application) {
     suspend fun getSearchNews(query: String): ViewState<List<Feed>> {
         return try {
             val listFeedAPI = feedRepository.getAllNewsNetwork()
-            val listSearchNews = mutableListOf<Feed>()
-            listFeedAPI.forEach {
-                if (it.title.lowercase().contains(query.lowercase()) || it.sender.lowercase().contains(query.lowercase()) || it.content.lowercase().contains(query.lowercase())){
-                    listSearchNews.add(it)
-                }
+            val listSearchNews = listFeedAPI.filter {
+                it.title.lowercase().contains(query.lowercase())
+                        || it.sender.lowercase().contains(query.lowercase())
+                        || it.content.lowercase().contains(query.lowercase())
             }
             ViewState.Success(listSearchNews)
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
         }
     }
