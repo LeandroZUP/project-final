@@ -14,11 +14,10 @@ class FeedUseCase(application: Application) {
 
     suspend fun getNewsNotRead(): ViewState<List<Feed>> {
         return try {
-            val listFeedAPI = feedRepository.getAllNewsNetwork()
-            val listFeedDB = feedRepository.getAllReadNews().map { it.id }
+            val listFeedAPI = modifyReadStatus()
 
             val notReadNewsList = listFeedAPI.filterNot {
-                listFeedDB.contains(it.id)
+                it.read
             }
 
             ViewState.Success(notReadNewsList)
@@ -27,9 +26,21 @@ class FeedUseCase(application: Application) {
         }
     }
 
+    private suspend fun modifyReadStatus(): List<Feed> {
+        val listFeedAPI = feedRepository.getAllNewsNetwork()
+        val listIndexFeedDB = feedRepository.getAllReadNews().map { it.id }
+
+        listFeedAPI.forEach {
+            if (it.id in listIndexFeedDB) {
+                it.read = true
+            }
+        }
+        return listFeedAPI
+    }
+
     suspend fun getSearchNews(query: String): ViewState<List<Feed>> {
         return try {
-            val listFeedAPI = feedRepository.getAllNewsNetwork()
+            val listFeedAPI = modifyReadStatus()
             val listSearchNews = listFeedAPI.filter {
                 it.title.lowercase().contains(query.lowercase())
                         || it.sender.lowercase().contains(query.lowercase())

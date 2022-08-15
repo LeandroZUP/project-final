@@ -32,10 +32,6 @@ class FeedActivity : AppCompatActivity() {
         binding = ActivityFeedBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-    }
-
-    override fun onResume() {
-        super.onResume()
         viewModel.getNotReadNews()
         showRecyclerView()
         observers()
@@ -53,7 +49,6 @@ class FeedActivity : AppCompatActivity() {
                     listFeed = it.data as MutableList<Feed>
                     adapter.updateFeedList(it.data)
                 }
-
                 is ViewState.Error -> Snackbar.make(
                     binding.root,
                     "${it.throwable.message}",

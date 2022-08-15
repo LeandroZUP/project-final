@@ -22,9 +22,9 @@ class FeedAdapter(
         val itemFeed = feedList[position]
         holder.showDataFeed(itemFeed)
         holder.binding.ivReadNews.setOnClickListener {
-            saveReadNews(itemFeed)
             if(feedList.size != 0) {
                 if(!itemFeed.read) {
+                    saveReadNews(itemFeed)
                     feedList.remove(itemFeed)
                     notifyItemRemoved(position)
                     notifyItemRangeChanged(position, feedList.size)
