@@ -24,4 +24,8 @@
     <string name="programs_text">Programas</string>
     <string name="feed_text">Feed</string>
     <string name="description_image_home">Imagem com o símbolo do whatsapp, escrito ao lado: fale com o tio CAZ.</string>
+    <string name="text_catalisa">Catalisa</string>
+    <string name="orange_talents_text">Orange Talents</string>
+    <string name="zupper_aprendiz_text">Zupper Aprendiz</string>
+    <string name="estrela_fora_da_caixa_text">Estrela fora da Caixa</string>
 </resources>

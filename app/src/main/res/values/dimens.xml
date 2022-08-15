@@ -24,5 +24,8 @@
     <dimen name="margin_2">2dp</dimen>
     <dimen name="margin_250">250dp</dimen>
     <dimen name="margin_200">200dp</dimen>
+    <dimen name="dimen_12">12dp</dimen>
+    <dimen name="dimen_2">2dp</dimen>
+    <dimen name="size_20">20sp</dimen>
 
 </resources>

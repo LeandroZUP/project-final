@@ -4,6 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tamires.Camejo/Desktop/HelloZupper/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.109" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable/custom_button_benefits.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable/custom_button_programs.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable/custom_edit_button_rounded.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable/custom_edit_text_rounded.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable/ic_bookmark.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/layout/activity_benefit.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/layout/activity_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/layout/activity_program.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/Tamires.Camejo/workspace/project-final/app/src/main/res/layout/programs_item.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_button_rounded.xml" value="0.1285" />
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_text_rounded.xml" value="0.1285" />
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_benefit.xml" value="0.17552083333333332" />

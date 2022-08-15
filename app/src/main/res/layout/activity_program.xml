@@ -7,28 +7,16 @@
     android:background="@drawable/background_world"
     tools:context=".ui.program.view.ProgramActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_156"
-        android:text="Em breve,"
-        android:textColor="@color/light_green"
-        android:textSize="50sp"
-        android:textStyle="bold"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPrograms"
+        android:layout_width="@dimen/margin_250"
+        android:layout_height="@dimen/margin_250"
+        android:layout_margin="@dimen/margin_8"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="novidades!"
-        android:textColor="@color/light_green"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="4"
+        tools:listitem="@layout/programs_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
