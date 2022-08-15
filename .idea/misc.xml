@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tamires.Camejo/Desktop/HelloZupper/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+<<<<<<< HEAD
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/drawable/ic_check.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/activity_benefit.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/activity_benefit_detail.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/benefit_item.xml" value="0.1" />
+        <entry key="..\:/Users/leandro.almeida/Desktop/HelloZupper/app/src/main/res/layout/feed_item.xml" value="0.1" />
+=======
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_button_rounded.xml" value="0.1285" />
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/drawable/custom_edit_text_rounded.xml" value="0.1285" />
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_benefit.xml" value="0.17552083333333332" />
@@ -14,6 +21,7 @@
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_program.xml" value="0.1" />
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_register.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/luiz.rodrigues/Desktop/Projeto final/Hello Zupper/app/src/main/res/layout/activity_splash.xml" value="0.17552083333333332" />
+>>>>>>> developer
       </map>
     </option>
   </component>
