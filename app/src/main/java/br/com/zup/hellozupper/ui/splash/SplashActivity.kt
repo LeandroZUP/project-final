@@ -30,3 +30,4 @@ class SplashActivity : AppCompatActivity() {
         this.finish()
     }
 }
+

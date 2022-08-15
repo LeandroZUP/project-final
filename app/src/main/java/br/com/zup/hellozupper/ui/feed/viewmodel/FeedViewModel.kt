@@ -16,8 +16,8 @@ import kotlinx.coroutines.withContext
 
 class FeedViewModel(application: Application) : AndroidViewModel(application) {
     private val feedUseCase = FeedUseCase(application)
-    private val _status = MutableLiveData<ViewState<List<Feed>>>()
-    var status: LiveData<ViewState<List<Feed>>> = _status
+    private val _state = MutableLiveData<ViewState<List<Feed>>>()
+    var state: LiveData<ViewState<List<Feed>>> = _state
 
     private val _readNews = MutableLiveData<String>()
     var readNews: LiveData<String> = _readNews
@@ -25,9 +25,6 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
     private val _loading = MutableLiveData<ViewState<Boolean>>()
     var loading: LiveData<ViewState<Boolean>> = _loading
 
-    fun getSearchListNews(): ViewState<List<Feed>>? {
-        return _status.value
-    }
 
     fun getNotReadNews() {
         _loading.value = ViewState.Loading(true)
@@ -36,9 +33,9 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
                 val response = withContext(Dispatchers.IO) {
                     feedUseCase.getNewsNotRead()
                 }
-                _status.value = response
+                _state.value = response
             } catch (e: Exception) {
-                _status.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
+                _state.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
             } finally {
                 _loading.value = ViewState.Loading(false)
             }
@@ -52,22 +49,22 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
                     feedUseCase.saveReadNewsIndex(news)
                 }
                 _readNews.value = MESSAGE_SUCCESS_NEWS_READ_ADDED
-            }catch (e: Exception) {
+            } catch (e: Exception) {
                 _readNews.value = "Fail"
             }
         }
     }
 
-    fun getAllReadNews() {
+    fun getSearchNews(query: String) {
         _loading.value = ViewState.Loading(true)
         viewModelScope.launch {
             try {
                 val response = withContext(Dispatchers.IO) {
-                    feedUseCase.getAllNews()
+                    feedUseCase.getSearchNews(query)
                 }
-                _status.value = response
+                _state.value = response
             } catch (e: Exception) {
-                _status.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
+                _state.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
             } finally {
                 _loading.value = ViewState.Loading(false)
             }

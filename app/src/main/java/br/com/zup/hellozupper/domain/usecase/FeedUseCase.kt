@@ -26,10 +26,16 @@ class FeedUseCase(application: Application) {
         }
     }
 
-    suspend fun getAllNews(): ViewState<List<Feed>> {
+    suspend fun getSearchNews(query: String): ViewState<List<Feed>> {
         return try {
-
-            ViewState.Success(feedRepository.getAllNewsNetwork())
+            val listFeedAPI = feedRepository.getAllNewsNetwork()
+            val listSearchNews = mutableListOf<Feed>()
+            listFeedAPI.forEach {
+                if (it.title.lowercase().contains(query.lowercase()) || it.sender.lowercase().contains(query.lowercase()) || it.content.lowercase().contains(query.lowercase())){
+                    listSearchNews.add(it)
+                }
+            }
+            ViewState.Success(listSearchNews)
         }catch (e: Exception) {
             ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
         }

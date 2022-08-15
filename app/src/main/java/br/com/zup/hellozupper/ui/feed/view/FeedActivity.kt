@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
@@ -48,7 +47,7 @@ class FeedActivity : AppCompatActivity() {
     }
 
     private fun observers() {
-        viewModel.status.observe(this) {
+        viewModel.state.observe(this) {
             when (it) {
                 is ViewState.Success -> {
                     listFeed = it.data as MutableList<Feed>
@@ -94,32 +93,17 @@ class FeedActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 val searchString = searchView.query.toString()
-                val listSearchNews = mutableListOf<Feed>()
-                listFeed.forEach {
-                    if (it.content.contains(searchString)){
-                        listSearchNews.add(it)
-                        adapter.updateFeedList(listSearchNews)
-                    }
-                }
+                viewModel.getSearchNews(searchString)
                 searchView.clearFocus()
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText?.let {
-                    val listSearchNews = mutableListOf<Feed>()
-                    listFeed.forEach {
-                        val title = it.title.lowercase()
-                        val content = it.content.lowercase()
-                        if (content.contains(newText.lowercase()) || title.contains(newText.lowercase())){
-                            listSearchNews.add(it)
-                            adapter.updateFeedList(listSearchNews)
-                        }
-                    }
+                    viewModel.getSearchNews(newText)
                 }
                 return true
             }
-
         })
         return true
     }
@@ -127,7 +111,6 @@ class FeedActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.search -> {
-                viewModel.getAllReadNews()
                 true
             }
             else -> {super.onOptionsItemSelected(item)}
