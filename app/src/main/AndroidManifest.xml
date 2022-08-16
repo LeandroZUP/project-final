@@ -19,7 +19,13 @@
             android:name=".ui.benefits.view.BenefitsDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.program.view.ProgramActivity"
+            android:name=".ui.programs.view.ProgramsDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.programs.view.ProgramsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detailpillars.view.DetailPillarsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.benefits.view.BenefitsActivity"

@@ -13,4 +13,7 @@ interface HelloZupperDAO {
 
     @Query("SELECT * FROM feed_table")
     fun getAllReadNews(): List<FeedEntity>
+
+    @Query("DELETE FROM feed_table WHERE id = :idNews")
+    fun deleteNewsDB(idNews: Int)
 }
