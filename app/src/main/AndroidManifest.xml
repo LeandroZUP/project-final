@@ -16,13 +16,10 @@
         android:theme="@style/Theme.HelloZupper"
         tools:targetApi="31">
         <activity
-            android:name=".ui.benefit.view.BenefitDetailsActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.program.view.ProgramActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.benefit.view.BenefitActivity"
+            android:name=".ui.benefits.view.BenefitsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.pillars.view.PillarsActivity"

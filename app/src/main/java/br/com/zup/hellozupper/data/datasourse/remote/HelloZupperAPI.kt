@@ -1,8 +1,8 @@
 package br.com.zup.hellozupper.data.datasourse.remote
 
+import br.com.zup.hellozupper.data.model.BenefitsResponse
 import br.com.zup.hellozupper.data.model.FeedResponse
 import br.com.zup.hellozupper.data.model.PillarsResponse
-import br.com.zup.hellozupper.data.model.benefit.BenefitResponse
 import retrofit2.http.GET
 
 interface HelloZupperAPI {
@@ -13,5 +13,5 @@ interface HelloZupperAPI {
     suspend fun getFeed(): FeedResponse
 
     @GET("/benefits")
-    suspend fun getBenefit(): BenefitResponse
+    suspend fun getBenefits(): BenefitsResponse
 }

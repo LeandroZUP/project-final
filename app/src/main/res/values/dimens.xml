@@ -29,5 +29,7 @@
     <dimen name="width_290">290dp</dimen>
     <dimen name="text_size_20">20sp</dimen>
     <dimen name="dimen_12">12dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_38">38dp</dimen>
 
 </resources>

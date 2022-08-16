@@ -1,38 +1,38 @@
-package br.com.zup.hellozupper.ui.benefit.view
+package br.com.zup.hellozupper.ui.benefits.view
 
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.zup.hellozupper.data.model.benefit.Benefit
-import br.com.zup.hellozupper.databinding.ActivityBenefitBinding
-import br.com.zup.hellozupper.ui.benefit.viewmodel.BenefitViewModel
+import br.com.zup.hellozupper.data.model.Benefits
+import br.com.zup.hellozupper.databinding.ActivityBenefitsBinding
+import br.com.zup.hellozupper.ui.benefits.viewmodel.BenefitsViewModel
 import br.com.zup.hellozupper.ui.viewstate.ViewState
 import br.com.zup.hellozupper.utils.BENEFITS
-import br.com.zup.hellozupper.utils.KEY_BENEFIT
 
-class BenefitActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityBenefitBinding
-    private val viewModel: BenefitViewModel by lazy {
-        ViewModelProvider(this)[BenefitViewModel::class.java]
+class BenefitsActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBenefitsBinding
+    private val viewModel: BenefitsViewModel by lazy {
+        ViewModelProvider(this)[BenefitsViewModel::class.java]
     }
 
-    private val adapter: BenefitAdapter by lazy {
-        BenefitAdapter(arrayListOf(), this::goToBenefitDetail)
+    private val adapter: BenefitsAdapter by lazy {
+        BenefitsAdapter(arrayListOf()) //, this::goToBenefitsDetail
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityBenefitsBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        binding = ActivityBenefitBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setUpRvPBenefitsList()
         supportActionBar()
         viewModel.getAllPrograms()
         initObserver()
-        setUpRvPBenefitsList()
+
     }
 
     private fun initObserver() {
@@ -52,30 +52,29 @@ class BenefitActivity : AppCompatActivity() {
             }
         }
 
-        //TODO Consert Loading
         viewModel.loading.observe(this) {
             when (it) {
                 is ViewState.Loading -> {
-                    binding.pbLoadingBenefit.isVisible = it.loading == true
+                    binding.pbLoadingBenefits.isVisible = it.loading == true
                 }
                 else -> {}
             }
         }
     }
 
-    //TODO Consert RecyclerView
     private fun setUpRvPBenefitsList() {
-        binding.rvBenefitsList.adapter = adapter
-        binding.rvBenefitsList.layoutManager = LinearLayoutManager(this)
+        binding.rvBenefitsButtons.adapter = adapter
+        binding.rvBenefitsButtons.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun goToBenefitDetail(benefit: Benefit) {
-        val intent = Intent(this, BenefitDetailsActivity::class.java).apply {
-            putExtra(KEY_BENEFIT, benefit)
-        }
-        startActivity(intent)
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
-    }
+//    private fun goToBenefitsDetail(benefits: Benefits) {
+//        Log.d("TODO", "Acertar o Benefícios Details")
+//        val intent = Intent(this, BenefitDetailsActivity::class.java).apply {
+//            putExtra(KEY_BENEFIT, benefit)
+//        }
+//        startActivity(intent)
+//        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+//    }
 
     private fun supportActionBar() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

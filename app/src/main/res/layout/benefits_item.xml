@@ -3,11 +3,11 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cvItemBenefit"
+    android:id="@+id/cvItemBenefits"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_8"
-    android:backgroundTint="@color/orange_light"
+    android:backgroundTint="@color/light_green"
     app:cardCornerRadius="@dimen/dimen_12">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,12 +15,12 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tvItemPrograms"
+            android:id="@+id/tvItemButtonsBenefits"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_8"
-            android:layout_marginTop="4dp"
-            android:text="@string/estrela_fora_da_caixa_text"
+            android:layout_marginTop="@dimen/margin_4"
+            android:text="@string/benefits_text"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_20"
             android:textAlignment="center"

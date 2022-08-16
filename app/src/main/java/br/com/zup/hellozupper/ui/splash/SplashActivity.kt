@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.zup.hellozupper.R
+import br.com.zup.hellozupper.ui.benefits.view.BenefitsActivity
 import br.com.zup.hellozupper.ui.feed.view.FeedActivity
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import java.util.*
@@ -24,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun jump() {
         timer.cancel()
-        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, BenefitsActivity::class.java))
         this.finish()
     }
 }
