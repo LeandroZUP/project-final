@@ -10,7 +10,7 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.databinding.ActivityHomeBinding
-import br.com.zup.hellozupper.ui.benefit.view.BenefitActivity
+import br.com.zup.hellozupper.ui.benefits.view.BenefitsActivity
 import br.com.zup.hellozupper.ui.feed.view.FeedActivity
 import br.com.zup.hellozupper.ui.home.viewmodel.HomeViewModel
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
@@ -55,7 +55,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToBenefit() {
-        startActivity(Intent(this, BenefitActivity::class.java))
+        startActivity(Intent(this, BenefitsActivity::class.java))
     }
 
     private fun clickOnImageWhatsapp() {

@@ -1,5 +1,6 @@
 package br.com.zup.hellozupper.data.datasourse.remote
 
+import br.com.zup.hellozupper.data.model.BenefitsResponse
 import br.com.zup.hellozupper.data.model.FeedResponse
 import br.com.zup.hellozupper.data.model.PillarsResponse
 import br.com.zup.hellozupper.data.model.ProgramsResponse
@@ -12,6 +13,10 @@ interface HelloZupperAPI {
     @GET("/feed")
     suspend fun getFeed(): FeedResponse
 
+    @GET("/benefits")
+    suspend fun getBenefits(): BenefitsResponse
+
     @GET("/programs")
     suspend fun getProgram(): ProgramsResponse
+
 }
