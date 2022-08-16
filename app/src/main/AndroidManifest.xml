@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.zup.hellozupper">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,8 +16,39 @@
         android:theme="@style/Theme.HelloZupper"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.benefits.view.BenefitsDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.programs.view.ProgramsDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.programs.view.ProgramsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detailpillars.view.DetailPillarsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.benefits.view.BenefitsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pillars.view.PillarsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.register.view.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.feed.view.FeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.view.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.view.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="br.com.zup.hellozupper.ui.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HelloZupper.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

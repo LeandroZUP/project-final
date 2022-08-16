@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_world"
+    tools:context=".ui.login.view.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_156"
+            android:text="@string/e_mail"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.139"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_42"
+            android:layout_marginLeft="@dimen/margin_49"
+            android:layout_marginRight="@dimen/margin_49"
+            android:autofillHints="emailAddress"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/ic_action_email"
+            android:drawablePadding="@dimen/margin_12"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/margin_12"
+            android:paddingEnd="@dimen/margin_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.367"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+            app:layout_constraintVertical_bias="0.0"
+            />
+
+        <TextView
+            android:id="@+id/tvLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/senha"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.139"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+        <EditText
+            android:id="@+id/etLock"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_42"
+            android:layout_marginLeft="@dimen/margin_49"
+            android:layout_marginRight="@dimen/margin_49"
+            android:autofillHints="password"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/ic_action_lock"
+            android:drawablePadding="@dimen/margin_12"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/margin_12"
+            android:paddingEnd="@dimen/margin_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLock"
+            />
+
+        <Button
+            android:id="@+id/bEnter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_42"
+            android:layout_marginLeft="@dimen/margin_49"
+            android:layout_marginTop="@dimen/margin_52"
+            android:layout_marginRight="@dimen/margin_49"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:text="@string/entrar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etLock" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/width_140"
+            android:layout_height="@dimen/height_5"
+            android:layout_marginStart="@dimen/margin_49"
+            android:layout_marginTop="@dimen/margin_44"
+            android:layout_marginEnd="@dimen/margin_2"
+            android:background="@color/blue"
+            app:layout_constraintEnd_toStartOf="@+id/tvOr"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/bEnter"
+            app:layout_constraintTop_toBottomOf="@+id/bEnter" />
+
+        <TextView
+            android:id="@+id/tvOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_36"
+            android:text="@string/ou"
+            android:gravity="center"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bEnter" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/width_140"
+            android:layout_height="@dimen/height_5"
+            android:layout_marginTop="@dimen/margin_44"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_marginEnd="@dimen/margin_49"
+            android:background="@color/blue"
+            app:layout_constraintEnd_toEndOf="@+id/bEnter"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvOr"
+            app:layout_constraintTop_toBottomOf="@+id/bEnter" />
+
+        <TextView
+            android:id="@+id/tvNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/novo_por_aqui"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_18"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.176"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/tvOr" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginStart="@dimen/margin_2"
+            android:text="@string/cadastre_se"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toEndOf="@+id/tvNew"
+            app:layout_constraintTop_toBottomOf="@+id/tvOr" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
