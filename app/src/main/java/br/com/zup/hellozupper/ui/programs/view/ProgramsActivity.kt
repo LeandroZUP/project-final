@@ -1,4 +1,4 @@
-package br.com.zup.hellozupper.ui.pillars.view
+package br.com.zup.hellozupper.ui.programs.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,40 +8,39 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.zup.hellozupper.data.model.Pillar
-import br.com.zup.hellozupper.databinding.ActivityPillarsBinding
-import br.com.zup.hellozupper.ui.detailpillars.view.DetailPillarsActivity
-import br.com.zup.hellozupper.ui.pillars.viewmodel.PillarsViewModel
+import br.com.zup.hellozupper.data.model.Programs
+import br.com.zup.hellozupper.databinding.ActivityProgramsBinding
+import br.com.zup.hellozupper.ui.programs.viewmodel.ProgramsViewModel
 import br.com.zup.hellozupper.ui.viewstate.ViewState
-import br.com.zup.hellozupper.utils.KEY_PILLAR
-import br.com.zup.hellozupper.utils.NOSSO_DNA
+import br.com.zup.hellozupper.utils.PROGRAMAS
+import br.com.zup.hellozupper.utils.PROGRAMS_KEY
 
-class PillarsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityPillarsBinding
+class ProgramsActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityProgramsBinding
 
-    private val viewModel: PillarsViewModel by lazy {
-        ViewModelProvider(this)[PillarsViewModel::class.java]
+    private val viewModel: ProgramsViewModel by lazy {
+        ViewModelProvider(this)[ProgramsViewModel::class.java]
     }
 
-    private val adapter: PillarsAdapter by lazy {
-        PillarsAdapter(arrayListOf(), this::goToPillarDetail)
+    private val adapter: ProgramsAdapter by lazy {
+        ProgramsAdapter(arrayListOf(), this::goToProgramsDetail)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPillarsBinding.inflate(layoutInflater)
+        binding = ActivityProgramsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar()
-        viewModel.getAllPillars()
+        viewModel.getAllPrograms()
         initObserver()
-        setUpRvPillarsList()
+        setUpRvProgramsList()
     }
 
     private fun initObserver() {
         viewModel.listState.observe(this) {
             when (it) {
                 is ViewState.Success -> {
-                    adapter.updatePillarsList(it.data.toMutableList())
+                    adapter.updateProgramsList(it.data.toMutableList())
                 }
                 is ViewState.Error -> {
                     Toast.makeText(
@@ -57,28 +56,29 @@ class PillarsActivity : AppCompatActivity() {
         viewModel.loading.observe(this) {
             when (it) {
                 is ViewState.Loading -> {
-                    binding.pbLoadingPillars.isVisible = it.loading == true
+                    binding.pbLoadingPrograms.isVisible = it.loading == true
                 }
                 else -> {}
             }
         }
     }
 
-    private fun setUpRvPillarsList() {
-        binding.rvPillarsList.adapter = adapter
-        binding.rvPillarsList.layoutManager = LinearLayoutManager(this)
+    private fun setUpRvProgramsList() {
+        binding.rvPrograms.adapter = adapter
+        binding.rvPrograms.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun goToPillarDetail(pillar: Pillar) {
-        val intent = Intent(this, DetailPillarsActivity::class.java).apply {
-            putExtra(KEY_PILLAR, pillar)
+    private fun goToProgramsDetail(programs: Programs) {
+        val intent = Intent(this, ProgramsDetailActivity::class.java).apply {
+            putExtra(PROGRAMS_KEY, programs)
         }
         startActivity(intent)
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
+
     private fun supportActionBar() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = NOSSO_DNA
+        supportActionBar?.title = PROGRAMAS
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
