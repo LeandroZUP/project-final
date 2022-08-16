@@ -1,4 +1,4 @@
-package br.com.zup.hellozupper.data.model
+package br.com.zup.hellozupper.data.model.benefit
 
 import com.google.gson.annotations.SerializedName
 
