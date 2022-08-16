@@ -15,6 +15,8 @@ import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.databinding.ActivityFeedBinding
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
 import br.com.zup.hellozupper.ui.viewstate.ViewState
+import br.com.zup.hellozupper.utils.FEED_TITLE
+import br.com.zup.hellozupper.utils.HELLO
 import br.com.zup.hellozupper.utils.MESSAGE_EMPTY_NEWS_LIST
 import com.google.android.material.snackbar.Snackbar
 
@@ -33,6 +35,7 @@ class FeedActivity : AppCompatActivity() {
         binding = ActivityFeedBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        supportActionBar()
         viewModel.getNotReadNews()
         showRecyclerView()
         observers()
@@ -117,7 +120,16 @@ class FeedActivity : AppCompatActivity() {
             R.id.search -> {
                 true
             }
+            android.R.id.home -> {
+                finish()
+                true
+            }
             else -> {super.onOptionsItemSelected(item)}
         }
+    }
+
+    private fun supportActionBar() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = FEED_TITLE
     }
 }
