@@ -32,7 +32,7 @@ class PillarsActivity : AppCompatActivity() {
         binding = ActivityPillarsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar()
-        viewModel.getAllRickAndMorty()
+        viewModel.getAllPillars()
         initObserver()
         setUpRvPillarsList()
     }

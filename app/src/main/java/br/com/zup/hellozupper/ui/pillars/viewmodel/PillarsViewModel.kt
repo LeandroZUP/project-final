@@ -21,7 +21,7 @@ class PillarsViewModel: ViewModel() {
     private val _loading = MutableLiveData<ViewState<Boolean>>()
     var loading: LiveData<ViewState<Boolean>> = _loading
 
-    fun getAllRickAndMorty() {
+    fun getAllPillars() {
         _loading.value = ViewState.Loading(true)
         viewModelScope.launch {
             try {
