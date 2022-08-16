@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.data.model.Feed
+import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.databinding.ActivityFeedBinding
 import br.com.zup.hellozupper.ui.MESSAGE_EMPTY_NEWS_LIST
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
@@ -19,14 +20,13 @@ import com.google.android.material.snackbar.Snackbar
 
 class FeedActivity : AppCompatActivity() {
     private val adapter: FeedAdapter by lazy {
-        FeedAdapter(mutableListOf(), this::saveReadNews)
+        FeedAdapter(saveReadNews = this::saveReadNews, modifyReadNewsToNotRead = this::modifyReadNewsToNotRead)
     }
     private val viewModel: FeedViewModel by lazy {
         ViewModelProvider(this)[FeedViewModel::class.java]
     }
 
     private lateinit var searchView: SearchView
-    private var listFeed = mutableListOf<Feed>()
 
     private lateinit var binding: ActivityFeedBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +50,8 @@ class FeedActivity : AppCompatActivity() {
                     if (it.data.isEmpty()){
                         binding.tvEmptyFeed.text = MESSAGE_EMPTY_NEWS_LIST
                         binding.tvEmptyFeed.isVisible = true
+                    }else{
+                        binding.tvEmptyFeed.isVisible = false
                     }
                     adapter.updateFeedList(it.data)
                 }
@@ -77,6 +79,10 @@ class FeedActivity : AppCompatActivity() {
 
     private fun saveReadNews(news: Feed) {
         viewModel.saveReadNews(news)
+    }
+
+    private fun modifyReadNewsToNotRead(news: FeedEntity){
+        viewModel.modifyReadNewsToNotRead(news)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
