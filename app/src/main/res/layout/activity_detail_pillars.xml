@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/ivDetailPillars"
+            android:id="@+id/ivPillars"
             android:layout_width="@dimen/width_250"
             android:layout_height="@dimen/height_250"
             android:layout_margin="@dimen/margin_50"
@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvTlitlePillars"
+            android:id="@+id/tvTitlePillars"
             android:layout_width="@dimen/width_320"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_16"
@@ -35,7 +35,7 @@
             android:textSize="@dimen/text_size_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivDetailPillars" />
+            app:layout_constraintTop_toBottomOf="@+id/ivPillars" />
 
         <TextView
             android:id="@+id/tvDescriptionPillars"
@@ -48,7 +48,7 @@
             android:textSize="@dimen/text_size_20"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTlitlePillars" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePillars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

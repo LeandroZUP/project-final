@@ -8,7 +8,8 @@ import br.com.zup.hellozupper.data.model.Pillar
 import br.com.zup.hellozupper.databinding.PillarsItemBinding
 
 class PillarsAdapter(
-    private var pillarList: MutableList<Pillar>
+    private var pillarList: MutableList<Pillar>,
+    private val clickPillar: (pillar: Pillar) -> Unit
 ) : RecyclerView.Adapter<PillarsAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: PillarsItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -29,6 +30,9 @@ class PillarsAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pillars = pillarList[position]
         holder.showPillarsInfo(pillars)
+        holder.binding.cvItemPillars.setOnClickListener {
+            clickPillar(pillars)
+        }
     }
 
     override fun getItemCount() = pillarList.size

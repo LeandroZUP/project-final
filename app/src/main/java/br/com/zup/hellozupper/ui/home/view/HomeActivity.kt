@@ -10,6 +10,7 @@ import br.com.zup.hellozupper.databinding.ActivityHomeBinding
 import br.com.zup.hellozupper.ui.benefit.view.BenefitActivity
 import br.com.zup.hellozupper.ui.feed.view.FeedActivity
 import br.com.zup.hellozupper.ui.home.viewmodel.HomeViewModel
+import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import br.com.zup.hellozupper.ui.pillars.view.PillarsActivity
 import br.com.zup.hellozupper.ui.program.view.ProgramActivity
 import br.com.zup.hellozupper.utils.HELLO
@@ -88,6 +89,10 @@ class HomeActivity : AppCompatActivity() {
         startActivity(Intent(this, ProgramActivity::class.java))
     }
 
+    private fun goToLogin() {
+        startActivity(Intent(this, ProgramActivity::class.java))
+    }
+
     private fun supportActionBar() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = HELLO + viewModel.getUserName()
@@ -95,6 +100,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
+            goToLogin()
             this.finish()
             return true
         }
