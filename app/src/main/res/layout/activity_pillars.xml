@@ -7,28 +7,14 @@
     android:background="@drawable/background_world"
     tools:context=".ui.pillars.view.PillarsActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPillarsList"
+        android:layout_width="@dimen/width_300"
+        android:layout_height="@dimen/height_0"
         android:layout_marginTop="@dimen/margin_156"
-        android:text="Em breve,"
-        android:textColor="@color/light_green"
-        android:textSize="50sp"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="novidades!"
-        android:textColor="@color/light_green"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
