@@ -4,9 +4,8 @@ import android.app.Application
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.domain.repository.FeedRepository
-import br.com.zup.hellozupper.ui.MESSAGE_FAIL_LOAD_NEWS_LIST
 import br.com.zup.hellozupper.ui.viewstate.ViewState
-import kotlin.Exception
+import br.com.zup.hellozupper.utils.MESSAGE_FAIL_LOAD_NEWS_LIST
 
 class FeedUseCase(application: Application) {
     private val feedRepository = FeedRepository(application)
@@ -57,7 +56,7 @@ class FeedUseCase(application: Application) {
         feedRepository.saveReadNewsIndex(feedDB)
     }
 
-    fun modifyReadNewsToNotRead(news: FeedEntity){
+    fun modifyReadNewsToNotRead(news: FeedEntity) {
         feedRepository.modifyReadNewsToNotRead(news)
     }
 }

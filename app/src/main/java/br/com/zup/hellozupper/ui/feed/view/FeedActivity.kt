@@ -13,9 +13,9 @@ import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.databinding.ActivityFeedBinding
-import br.com.zup.hellozupper.ui.MESSAGE_EMPTY_NEWS_LIST
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
 import br.com.zup.hellozupper.ui.viewstate.ViewState
+import br.com.zup.hellozupper.utils.MESSAGE_EMPTY_NEWS_LIST
 import com.google.android.material.snackbar.Snackbar
 
 class FeedActivity : AppCompatActivity() {
