@@ -25,4 +25,7 @@
     <string name="feed_text">Feed</string>
     <string name="description_image_home">Imagem com o símbolo do whatsapp, escrito ao lado: fale com o tio CAZ.</string>
     <string name="sem_conexao_a_internet">Sem conexão a internet</string>
+    <string name="descricao_imagem">Um desenho de uma mulher sentado em um foguete, segurando uma bandeira verde com o simbolo da zup .</string>
+    <string name="vai_que_da">Vai que dá, confia!</string>
+    <string name="descricao_vai_que_da">Confiamos na inteligência coletiva ao discutir problemas em grupo, focamos em qual a melhor forma de resolvê-lo e então vamos em frente.</string>
 </resources>
