@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.databinding.ActivityFeedBinding
+import br.com.zup.hellozupper.ui.MESSAGE_EMPTY_NEWS_LIST
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
 import br.com.zup.hellozupper.ui.viewstate.ViewState
 import com.google.android.material.snackbar.Snackbar
@@ -46,14 +47,16 @@ class FeedActivity : AppCompatActivity() {
         viewModel.state.observe(this) {
             when (it) {
                 is ViewState.Success -> {
-                    listFeed = it.data as MutableList<Feed>
+                    if (it.data.isEmpty()){
+                        binding.tvEmptyFeed.text = MESSAGE_EMPTY_NEWS_LIST
+                        binding.tvEmptyFeed.isVisible = true
+                    }
                     adapter.updateFeedList(it.data)
                 }
-                is ViewState.Error -> Snackbar.make(
-                    binding.root,
-                    "${it.throwable.message}",
-                    Snackbar.LENGTH_SHORT
-                ).show()
+                is ViewState.Error -> {
+                    binding.tvEmptyFeed.text = it.throwable.message
+                    binding.tvEmptyFeed.isVisible = true
+                }
                 else -> {}
             }
         }

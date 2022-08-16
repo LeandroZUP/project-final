@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.domain.usecase.FeedUseCase
 import br.com.zup.hellozupper.ui.MESSAGE_FAIL_LOAD_NEWS_LIST
+import br.com.zup.hellozupper.ui.MESSAGE_FAIL_NEWS_READ_ADDED
 import br.com.zup.hellozupper.ui.MESSAGE_SUCCESS_NEWS_READ_ADDED
 import br.com.zup.hellozupper.ui.viewstate.ViewState
 import kotlinx.coroutines.Dispatchers
@@ -50,7 +51,7 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
                 }
                 _readNews.value = MESSAGE_SUCCESS_NEWS_READ_ADDED
             } catch (e: Exception) {
-                _readNews.value = "Fail"
+                _readNews.value = MESSAGE_FAIL_NEWS_READ_ADDED
             }
         }
     }
