@@ -25,11 +25,11 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initObservers()
-        clickOntextRegister()
+        clickOnTextRegister()
         clickOnEnterButton()
     }
 
-    private fun clickOntextRegister() {
+    private fun clickOnTextRegister() {
         binding.tvRegister.setOnClickListener {
             goToRegister()
         }

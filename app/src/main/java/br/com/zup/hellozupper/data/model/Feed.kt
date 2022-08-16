@@ -13,4 +13,5 @@ data class Feed(
     val content: String,
     @SerializedName("date")
     val date: String,
+    var read: Boolean = false
 )

@@ -1,11 +1,15 @@
 package br.com.zup.hellozupper.ui.feed.view
 
 import android.os.Bundle
-import android.widget.Toast
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.databinding.ActivityFeedBinding
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
@@ -19,6 +23,10 @@ class FeedActivity : AppCompatActivity() {
     private val viewModel: FeedViewModel by lazy {
         ViewModelProvider(this)[FeedViewModel::class.java]
     }
+
+    private lateinit var searchView: SearchView
+    private var listFeed = mutableListOf<Feed>()
+
     private lateinit var binding: ActivityFeedBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityFeedBinding.inflate(layoutInflater)
@@ -39,9 +47,13 @@ class FeedActivity : AppCompatActivity() {
     }
 
     private fun observers() {
-        viewModel.status.observe(this) {
+        viewModel.state.observe(this) {
             when (it) {
-                is ViewState.Success -> adapter.updateFeedList(it.data)
+                is ViewState.Success -> {
+                    listFeed = it.data as MutableList<Feed>
+                    adapter.updateFeedList(it.data)
+                }
+
                 is ViewState.Error -> Snackbar.make(
                     binding.root,
                     "${it.throwable.message}",
@@ -67,5 +79,41 @@ class FeedActivity : AppCompatActivity() {
 
     private fun saveReadNews(news: Feed) {
         viewModel.saveReadNews(news)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+
+        val searchItem = menu?.findItem(R.id.search)
+        searchView = searchItem?.actionView as SearchView
+
+        searchView.isIconified = false
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                val searchString = searchView.query.toString()
+                viewModel.getSearchNews(searchString)
+                searchView.clearFocus()
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText?.let {
+                    viewModel.getSearchNews(newText)
+                }
+                return true
+            }
+        })
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.search -> {
+                true
+            }
+            else -> {super.onOptionsItemSelected(item)}
+        }
     }
 }
