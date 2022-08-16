@@ -24,5 +24,14 @@
     <dimen name="margin_2">2dp</dimen>
     <dimen name="margin_250">250dp</dimen>
     <dimen name="margin_200">200dp</dimen>
+    <dimen name="height_0">0dp</dimen>
+    <dimen name="width_300">300dp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="width_250">250dp</dimen>
+    <dimen name="height_250">250dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+    <dimen name="width_320">320dp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="width_290">290dp</dimen>
 
 </resources>

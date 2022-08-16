@@ -10,4 +10,8 @@ const val NAME_INCOMPLETE = "Favor o nome está incompleto"
 const val PASSWORD_INCOMPLETE = "A senha informada deve ter no mínimo 6 caracteres"
 const val EMAIL_INVALID = "E-mail inválido!"
 const val HELLO = "Olá, "
+const val ERRO_API_PILLARS = "Não foi possível carregar a lista de pilares"
+const val NOSSO_DNA = "Nosso DNA"
+const val KEY_PILLAR = "Chave pillar"
+
 

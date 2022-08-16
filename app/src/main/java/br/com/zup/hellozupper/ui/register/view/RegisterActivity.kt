@@ -68,5 +68,6 @@ class RegisterActivity : AppCompatActivity() {
             putExtra(USER_KEY, user)
         }
         startActivity(intent)
+        this.finish()
     }
 }
