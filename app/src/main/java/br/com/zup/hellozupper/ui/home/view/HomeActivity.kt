@@ -90,7 +90,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToLogin() {
-        startActivity(Intent(this, ProgramActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
     private fun supportActionBar() {
