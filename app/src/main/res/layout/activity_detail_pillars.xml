@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_world"
+    tools:context=".ui.detailpillars.view.DetailPillarsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivPillars"
+            android:layout_width="@dimen/width_250"
+            android:layout_height="@dimen/height_250"
+            android:layout_margin="@dimen/margin_50"
+            android:contentDescription="@string/descricao_imagem"
+            android:src="@drawable/vai_que_da"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitlePillars"
+            android:layout_width="@dimen/width_320"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_44"
+            android:layout_marginRight="@dimen/margin_16"
+            android:gravity="center"
+            android:text="@string/vai_que_da"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPillars" />
+
+        <TextView
+            android:id="@+id/tvDescriptionPillars"
+            android:layout_width="@dimen/width_290"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            android:gravity="center"
+            android:text="@string/descricao_vai_que_da"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePillars" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -22,6 +22,9 @@
             android:name=".ui.programs.view.ProgramsActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.detailpillars.view.DetailPillarsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.benefit.view.BenefitActivity"
             android:exported="false" />
         <activity
