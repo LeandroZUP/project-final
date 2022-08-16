@@ -28,4 +28,10 @@
     <string name="descricao_imagem">Um desenho de uma mulher sentado em um foguete, segurando uma bandeira verde com o simbolo da zup .</string>
     <string name="vai_que_da">Vai que dá, confia!</string>
     <string name="descricao_vai_que_da">Confiamos na inteligência coletiva ao discutir problemas em grupo, focamos em qual a melhor forma de resolvê-lo e então vamos em frente.</string>
+    <string name="text_catalisa">Catalisa</string>
+    <string name="orange_talents_text">Orange Talents</string>
+    <string name="zupper_aprendiz_text">Zupper Aprendiz</string>
+    <string name="estrela_fora_da_caixa_text">Estrela fora da Caixa</string>
+    <string name="text_detail_programs">Programa de formação profissional em tecnologia para pessoas em situação de vulnerabilidade social de renda com contratação desde o 1º dia. Afinal, onde tem gente, tem talento!</string>
+    <string name="description_image_detail_programs">Imagem de uma caixa aberta com várias estrelas saindo de dentro.</string>
 </resources>

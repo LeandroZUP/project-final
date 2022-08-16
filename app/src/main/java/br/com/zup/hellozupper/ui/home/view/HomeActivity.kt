@@ -12,7 +12,7 @@ import br.com.zup.hellozupper.ui.feed.view.FeedActivity
 import br.com.zup.hellozupper.ui.home.viewmodel.HomeViewModel
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import br.com.zup.hellozupper.ui.pillars.view.PillarsActivity
-import br.com.zup.hellozupper.ui.program.view.ProgramActivity
+import br.com.zup.hellozupper.ui.programs.view.ProgramsActivity
 import br.com.zup.hellozupper.utils.HELLO
 
 class HomeActivity : AppCompatActivity() {
@@ -86,11 +86,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToProgram() {
-        startActivity(Intent(this, ProgramActivity::class.java))
+        startActivity(Intent(this, ProgramsActivity::class.java))
     }
 
     private fun goToLogin() {
-        startActivity(Intent(this, ProgramActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
     private fun supportActionBar() {

@@ -126,7 +126,7 @@
             android:layout_marginLeft="@dimen/margin_49"
             android:layout_marginTop="@dimen/margin_52"
             android:layout_marginRight="@dimen/margin_49"
-            android:background="@drawable/custom_edit_button_rounded"
+            android:background="@drawable/custom_edit_text_rounded"
             android:text="@string/salvar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

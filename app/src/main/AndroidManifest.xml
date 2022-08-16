@@ -16,7 +16,10 @@
         android:theme="@style/Theme.HelloZupper"
         tools:targetApi="31">
         <activity
-            android:name=".ui.program.view.ProgramActivity"
+            android:name=".ui.programs.view.ProgramsDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.programs.view.ProgramsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.detailpillars.view.DetailPillarsActivity"
