@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_world"
-    tools:context=".ui.program.view.ProgramActivity">
+    tools:context=".ui.programs.view.ProgramsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPrograms"
@@ -18,5 +18,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="4"
         tools:listitem="@layout/programs_item" />
+
+    <ProgressBar
+        android:id="@+id/pbLoadingPrograms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

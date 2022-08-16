@@ -1,4 +1,4 @@
-package br.com.zup.hellozupper.ui.program.view
+package br.com.zup.hellozupper.ui.programs.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
