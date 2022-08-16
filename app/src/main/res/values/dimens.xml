@@ -37,5 +37,6 @@
     <dimen name="width_320">320dp</dimen>
     <dimen name="text_size_24">24sp</dimen>
     <dimen name="width_290">290dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
 
 </resources>

@@ -7,6 +7,8 @@ data class Feed(
     val id: Int,
     @SerializedName("sender")
     val sender: String,
+    @SerializedName("time")
+    val time: String,
     @SerializedName("title")
     val title: String,
     @SerializedName("content")
