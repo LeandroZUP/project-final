@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun jump() {
         timer.cancel()
-        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, BenefitsActivity::class.java))
         this.finish()
     }
 }
