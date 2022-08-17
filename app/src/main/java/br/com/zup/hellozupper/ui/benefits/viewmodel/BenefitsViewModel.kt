@@ -21,12 +21,12 @@ class BenefitsViewModel: ViewModel() {
     private val _loading = MutableLiveData<ViewState<Boolean>>()
     var loading: LiveData<ViewState<Boolean>> = _loading
 
-    fun getAllPrograms() {
+    fun getAllBenefits() {
         _loading.value = ViewState.Loading(true)
         viewModelScope.launch {
             try {
                 val response = withContext(Dispatchers.IO) {
-                    benefitsUseCase.getAllProgramsNetwork()
+                    benefitsUseCase.getAllBenefitsNetwork()
                 }
                 _listState.value = response
             } catch (ex: Exception) {

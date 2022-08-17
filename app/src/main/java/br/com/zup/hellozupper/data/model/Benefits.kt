@@ -1,8 +1,11 @@
 package br.com.zup.hellozupper.data.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Benefits(
     @SerializedName("descriptionFive")
     val descriptionFive: String,
@@ -20,4 +23,4 @@ data class Benefits(
     val id: Int,
     @SerializedName("title")
     val title: String
-)
+): Parcelable
