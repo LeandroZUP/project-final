@@ -4,8 +4,11 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
+import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.databinding.ActivityHomeBinding
 import br.com.zup.hellozupper.ui.benefits.view.BenefitsActivity
 import br.com.zup.hellozupper.ui.feed.view.FeedActivity
@@ -14,6 +17,7 @@ import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import br.com.zup.hellozupper.ui.pillars.view.PillarsActivity
 import br.com.zup.hellozupper.ui.programs.view.ProgramsActivity
 import br.com.zup.hellozupper.utils.HELLO
+import java.lang.System.exit
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -94,16 +98,25 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun supportActionBar() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = HELLO + viewModel.getUserName()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_home, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
-            goToLogin()
-            this.finish()
-            return true
+        return when (item.itemId){
+            R.id.exit -> {
+                goToLogin()
+                this.finish()
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
         }
-        return super.onOptionsItemSelected(item)
     }
 }

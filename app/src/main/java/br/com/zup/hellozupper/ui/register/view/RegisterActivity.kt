@@ -36,6 +36,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun goToLogin() {
         startActivity(Intent(this, LoginActivity::class.java))
+        this.finish()
     }
 
     private fun clickOnSaveButton() {

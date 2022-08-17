@@ -9,7 +9,7 @@ import br.com.zup.hellozupper.databinding.BenefitsItemBinding
 
 class BenefitsAdapter(
     private var benefitsList: MutableList<Benefits>,
-//    private val clickBenefits: (benefits: Benefits) -> Unit
+    private val clickBenefits: (benefits: Benefits) -> Unit
 ) : RecyclerView.Adapter<BenefitsAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: BenefitsItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -28,9 +28,9 @@ class BenefitsAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val benefits = benefitsList[position]
         holder.showInformations(benefits)
-//        holder.binding.cvItemBenefit.setOnClickListener {
-//            clickBenefits(benefits)
-//        }
+        holder.binding.cvItemBenefits.setOnClickListener {
+            clickBenefits(benefits)
+        }
     }
     override fun getItemCount() = benefitsList.size
 
