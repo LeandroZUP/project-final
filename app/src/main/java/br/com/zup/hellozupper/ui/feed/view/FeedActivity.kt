@@ -11,31 +11,31 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.data.model.Feed
+import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.databinding.ActivityFeedBinding
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
 import br.com.zup.hellozupper.ui.viewstate.ViewState
+import br.com.zup.hellozupper.utils.FEED_TITLE
+import br.com.zup.hellozupper.utils.HELLO
+import br.com.zup.hellozupper.utils.MESSAGE_EMPTY_NEWS_LIST
 import com.google.android.material.snackbar.Snackbar
 
 class FeedActivity : AppCompatActivity() {
     private val adapter: FeedAdapter by lazy {
-        FeedAdapter(mutableListOf(), this::saveReadNews)
+        FeedAdapter(saveReadNews = this::saveReadNews, modifyReadNewsToNotRead = this::modifyReadNewsToNotRead)
     }
     private val viewModel: FeedViewModel by lazy {
         ViewModelProvider(this)[FeedViewModel::class.java]
     }
 
     private lateinit var searchView: SearchView
-    private var listFeed = mutableListOf<Feed>()
 
     private lateinit var binding: ActivityFeedBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityFeedBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-    }
-
-    override fun onResume() {
-        super.onResume()
+        supportActionBar()
         viewModel.getNotReadNews()
         showRecyclerView()
         observers()
@@ -50,15 +50,18 @@ class FeedActivity : AppCompatActivity() {
         viewModel.state.observe(this) {
             when (it) {
                 is ViewState.Success -> {
-                    listFeed = it.data as MutableList<Feed>
+                    if (it.data.isEmpty()){
+                        binding.tvEmptyFeed.text = MESSAGE_EMPTY_NEWS_LIST
+                        binding.tvEmptyFeed.isVisible = true
+                    }else{
+                        binding.tvEmptyFeed.isVisible = false
+                    }
                     adapter.updateFeedList(it.data)
                 }
-
-                is ViewState.Error -> Snackbar.make(
-                    binding.root,
-                    "${it.throwable.message}",
-                    Snackbar.LENGTH_SHORT
-                ).show()
+                is ViewState.Error -> {
+                    binding.tvEmptyFeed.text = it.throwable.message
+                    binding.tvEmptyFeed.isVisible = true
+                }
                 else -> {}
             }
         }
@@ -79,6 +82,10 @@ class FeedActivity : AppCompatActivity() {
 
     private fun saveReadNews(news: Feed) {
         viewModel.saveReadNews(news)
+    }
+
+    private fun modifyReadNewsToNotRead(news: FeedEntity){
+        viewModel.modifyReadNewsToNotRead(news)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -113,7 +120,16 @@ class FeedActivity : AppCompatActivity() {
             R.id.search -> {
                 true
             }
+            android.R.id.home -> {
+                finish()
+                true
+            }
             else -> {super.onOptionsItemSelected(item)}
         }
+    }
+
+    private fun supportActionBar() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = FEED_TITLE
     }
 }

@@ -21,4 +21,8 @@ class FeedRepository(application: Application) {
     fun getAllReadNews(): List<FeedEntity> {
         return feedDao.getAllReadNews()
     }
+
+    fun modifyReadNewsToNotRead(news: FeedEntity){
+        feedDao.deleteNewsDB(news.id)
+    }
 }
