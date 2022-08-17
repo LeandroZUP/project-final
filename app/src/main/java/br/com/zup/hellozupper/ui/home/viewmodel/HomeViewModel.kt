@@ -9,4 +9,6 @@ class HomeViewModel : ViewModel() {
     fun getUserName() = authenticationRepository.getNameUser()
 
     fun getUserEmail() = authenticationRepository.getEmailUser()
+
+    fun logoutUser() = authenticationRepository.logoutUser()
 }
