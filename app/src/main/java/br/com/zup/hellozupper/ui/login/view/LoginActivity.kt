@@ -51,6 +51,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun goToRegister() {
         startActivity(Intent(this, RegisterActivity::class.java))
+        this.finish()
     }
 
     private fun initObservers() {
@@ -68,5 +69,6 @@ class LoginActivity : AppCompatActivity() {
             putExtra(USER_KEY, user)
         }
         startActivity(intent)
+        this.finish()
     }
 }
