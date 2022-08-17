@@ -50,6 +50,7 @@ class FeedAdapter(
         fun showDataFeed(feed: Feed) {
             binding.tvSenderFeed.text = feed.sender
             binding.tvTitleFeed.text = feed.title
+            binding.tvTimeFeed.text = feed.time
             binding.tvDateFeed.text = feed.date
             binding.tvContentFeed.text = feed.content
 

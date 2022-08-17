@@ -42,7 +42,5 @@
     <string name="tv_description_four">Descrição4</string>
     <string name="tv_description_five">Descrição5</string>
     <string name="tv_description_six">Descrição6</string>
-
-
-
+    <string name="exit">Exit</string>
 </resources>
