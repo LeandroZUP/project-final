@@ -36,4 +36,5 @@
     <string name="estrela_fora_da_caixa_text">Estrela fora da Caixa</string>
     <string name="text_detail_programs">Programa de formação profissional em tecnologia para pessoas em situação de vulnerabilidade social de renda com contratação desde o 1º dia. Afinal, onde tem gente, tem talento!</string>
     <string name="description_image_detail_programs">Imagem de uma caixa aberta com várias estrelas saindo de dentro.</string>
+    <string name="exit">Exit</string>
 </resources>
