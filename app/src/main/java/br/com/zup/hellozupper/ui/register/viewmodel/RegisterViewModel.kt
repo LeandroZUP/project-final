@@ -80,7 +80,6 @@ class RegisterViewModel : ViewModel() {
                 user.email,
                 user.password
             ).addOnSuccessListener {
-
                 authenticationRepository.updateUserProfile(user.name)?.addOnSuccessListener {
                     _registerState.value = user
                 }
