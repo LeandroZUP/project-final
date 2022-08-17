@@ -8,7 +8,7 @@ import br.com.zup.hellozupper.utils.ERRO_API_BENEFITS
 class BenefitsUseCase {
     private val benefitRepository = BenefitsRepository()
 
-    suspend fun getAllProgramsNetwork(): ViewState<List<Benefits>> {
+    suspend fun getAllBenefitsNetwork(): ViewState<List<Benefits>> {
         return try {
             val benefitsZup = benefitRepository.getAllNetwork()
             ViewState.Success(benefitsZup.benefits)
