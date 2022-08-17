@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_8"
-    android:backgroundTint="#AAFFFFFF"
+    android:backgroundTint="@color/white"
     app:cardCornerRadius="@dimen/margin_12">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
             android:id="@+id/tvSenderFeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/orange"
             android:textSize="@dimen/size_12"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/tvDateFeed"
@@ -51,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="@color/text_orange"
+            android:textColor="@color/blue"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/ivReadNews"
             app:layout_constraintHorizontal_bias="0.0"
