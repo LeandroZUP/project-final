@@ -39,5 +39,6 @@
     <dimen name="width_250">250dp</dimen>
     <dimen name="height_250">250dp</dimen>
     <dimen name="margin_50">50dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
 
 </resources>

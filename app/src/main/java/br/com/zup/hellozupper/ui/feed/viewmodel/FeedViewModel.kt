@@ -10,6 +10,7 @@ import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.domain.usecase.FeedUseCase
 import br.com.zup.hellozupper.ui.*
 import br.com.zup.hellozupper.ui.viewstate.ViewState
+import br.com.zup.hellozupper.utils.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
