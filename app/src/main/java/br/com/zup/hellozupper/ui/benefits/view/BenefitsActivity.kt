@@ -18,6 +18,7 @@ import br.com.zup.hellozupper.utils.KEY_BENEFITS
 class BenefitsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBenefitsBinding
     private val viewModel: BenefitsViewModel by lazy {
+
         ViewModelProvider(this)[BenefitsViewModel::class.java]
     }
 
@@ -26,13 +27,13 @@ class BenefitsActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityBenefitsBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityBenefitsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setUpRvPBenefitsList()
         supportActionBar()
-        viewModel.getAllPrograms()
+        viewModel.getAllBenefits()
         initObserver()
+        setUpRvPBenefitsList()
 
     }
 

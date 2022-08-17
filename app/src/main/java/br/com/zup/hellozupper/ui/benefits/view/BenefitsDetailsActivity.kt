@@ -11,8 +11,8 @@ class BenefitsDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBenefitsDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityBenefitsDetailsBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityBenefitsDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getPassedData()
     }
@@ -28,6 +28,7 @@ class BenefitsDetailsActivity : AppCompatActivity() {
                 it.descriptionFour,
                 it.descriptionFive,
                 it.descriptionSix)
+            supportActionBar(it.title)
         }
     }
 
@@ -38,7 +39,6 @@ class BenefitsDetailsActivity : AppCompatActivity() {
         descriptionFour: String,
         descriptionFive: String,
         descriptionSix: String,
-
     ) {
         binding.tvDescriptionOne.text = descriptionOne
         binding.tvDescriptionTwo.text = descriptionTwo
@@ -48,10 +48,10 @@ class BenefitsDetailsActivity : AppCompatActivity() {
         binding.tvDescriptionSix.text = descriptionSix
     }
 
-//    private fun supportActionBar(title: String) {
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        supportActionBar?.title = title
-//    }
+    private fun supportActionBar(title: String) {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = title
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
