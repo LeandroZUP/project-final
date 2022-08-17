@@ -16,7 +16,6 @@ import br.com.zup.hellozupper.databinding.ActivityFeedBinding
 import br.com.zup.hellozupper.ui.feed.viewmodel.FeedViewModel
 import br.com.zup.hellozupper.ui.viewstate.ViewState
 import br.com.zup.hellozupper.utils.FEED_TITLE
-import br.com.zup.hellozupper.utils.HELLO
 import br.com.zup.hellozupper.utils.MESSAGE_EMPTY_NEWS_LIST
 import com.google.android.material.snackbar.Snackbar
 
@@ -48,7 +47,6 @@ class FeedActivity : AppCompatActivity() {
 
     private fun observers() {
         viewModel.state.observe(this) {
-            binding.lottieError.isVisible = false
             when (it) {
                 is ViewState.Success -> {
                     if (it.data.isEmpty()){
@@ -56,6 +54,7 @@ class FeedActivity : AppCompatActivity() {
                         binding.lottieError.isVisible = true
                         binding.tvEmptyFeed.isVisible = true
                     }else{
+                        binding.lottieError.isVisible = false
                         binding.tvEmptyFeed.isVisible = false
                     }
                     adapter.updateFeedList(it.data)
@@ -117,9 +116,12 @@ class FeedActivity : AppCompatActivity() {
         return true
     }
 
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.search -> {
+                viewModel.getAllNewsAPI()
                 true
             }
             android.R.id.home -> {

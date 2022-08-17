@@ -44,6 +44,23 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+
+    fun getAllNewsAPI() {
+        _loading.value = ViewState.Loading(true)
+        viewModelScope.launch {
+            try {
+                val response = withContext(Dispatchers.IO) {
+                    feedUseCase.getAllNewsAPI()
+                }
+                _state.value = response
+            } catch (e: Exception) {
+                _state.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
+            } finally {
+                _loading.value = ViewState.Loading(false)
+            }
+        }
+    }
+
     fun saveReadNews(news: Feed) {
         viewModelScope.launch {
             try {
@@ -71,7 +88,6 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun getSearchNews(query: String) {
-        _loading.value = ViewState.Loading(true)
         viewModelScope.launch {
             try {
                 val response = withContext(Dispatchers.IO) {
@@ -80,8 +96,6 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
                 _state.value = response
             } catch (e: Exception) {
                 _state.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
-            } finally {
-                _loading.value = ViewState.Loading(false)
             }
         }
     }

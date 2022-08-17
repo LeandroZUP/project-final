@@ -10,7 +10,6 @@ import br.com.zup.hellozupper.utils.MESSAGE_FAIL_LOAD_NEWS_LIST
 class FeedUseCase(application: Application) {
     private val feedRepository = FeedRepository(application)
 
-
     suspend fun getNewsNotRead(): ViewState<List<Feed>> {
         return try {
             val listFeedAPI = modifyReadStatus()
@@ -35,6 +34,15 @@ class FeedUseCase(application: Application) {
             }
         }
         return listFeedAPI
+    }
+
+    suspend fun getAllNewsAPI(): ViewState<List<Feed>>{
+        return try {
+            val listFeedAPI = modifyReadStatus()
+            ViewState.Success(listFeedAPI)
+        } catch (e: Exception) {
+            ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
+        }
     }
 
     suspend fun getSearchNews(query: String): ViewState<List<Feed>> {
