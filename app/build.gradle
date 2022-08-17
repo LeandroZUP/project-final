@@ -77,4 +77,6 @@ dependencies {
     //################### PICASSO IMAGE LOADER ######################/
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //################### LOTTIE ######################/
+    implementation 'com.airbnb.android:lottie:3.4.0'
 }

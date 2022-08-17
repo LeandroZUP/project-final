@@ -48,10 +48,12 @@ class FeedActivity : AppCompatActivity() {
 
     private fun observers() {
         viewModel.state.observe(this) {
+            binding.lottieError.isVisible = false
             when (it) {
                 is ViewState.Success -> {
                     if (it.data.isEmpty()){
                         binding.tvEmptyFeed.text = MESSAGE_EMPTY_NEWS_LIST
+                        binding.lottieError.isVisible = true
                         binding.tvEmptyFeed.isVisible = true
                     }else{
                         binding.tvEmptyFeed.isVisible = false
@@ -59,8 +61,8 @@ class FeedActivity : AppCompatActivity() {
                     adapter.updateFeedList(it.data)
                 }
                 is ViewState.Error -> {
+                    binding.lottieError.isVisible = true
                     binding.tvEmptyFeed.text = it.throwable.message
-                    binding.tvEmptyFeed.isVisible = true
                 }
                 else -> {}
             }
@@ -69,7 +71,7 @@ class FeedActivity : AppCompatActivity() {
         viewModel.loading.observe(this) {
             when (it) {
                 is ViewState.Loading -> {
-                    binding.pbLoading.isVisible = it.loading == true
+                    binding.lottieLoad.isVisible = it.loading == true
                 }
                 else -> {}
             }

@@ -12,6 +12,7 @@ import br.com.zup.hellozupper.ui.*
 import br.com.zup.hellozupper.ui.viewstate.ViewState
 import br.com.zup.hellozupper.utils.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 

@@ -40,5 +40,8 @@
     <dimen name="height_250">250dp</dimen>
     <dimen name="margin_50">50dp</dimen>
     <dimen name="dimen_4">4dp</dimen>
+    <dimen name="dimen_200">200dp</dimen>
+    <dimen name="dimen_32">32dp</dimen>
+    <dimen name="dimen_64">64dp</dimen>
 
 </resources>
