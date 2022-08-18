@@ -17,7 +17,7 @@ class RetrofitService {
             httpClient.connectTimeout(30, TimeUnit.SECONDS)
             httpClient.writeTimeout(30, TimeUnit.SECONDS)
 
-            if(BuildConfig.DEBUG){
+            if (BuildConfig.DEBUG) {
                 val logInterceptor = HttpLoggingInterceptor()
                 logInterceptor.level = HttpLoggingInterceptor.Level.BODY
                 httpClient.addInterceptor(logInterceptor)
@@ -32,6 +32,6 @@ class RetrofitService {
 
         @JvmStatic
         val apiService: HelloZupperAPI
-        get() = retrofit.create(HelloZupperAPI::class.java)
+            get() = retrofit.create(HelloZupperAPI::class.java)
     }
 }

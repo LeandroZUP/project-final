@@ -23,13 +23,13 @@ class FeedAdapter(
         val itemFeed = feedList[position]
         holder.showDataFeed(itemFeed)
         holder.binding.ivReadNews.setOnClickListener {
-            if(feedList.size != 0) {
-                if(!itemFeed.read) {
+            if (feedList.size != 0) {
+                if (!itemFeed.read) {
                     saveReadNews(itemFeed)
                     feedList.remove(itemFeed)
                     notifyItemRemoved(position)
                     notifyItemRangeChanged(position, feedList.size)
-                }else{
+                } else {
                     modifyReadNewsToNotRead(FeedEntity(itemFeed.id))
                     itemFeed.read = false
                     notifyItemChanged(position)
@@ -56,9 +56,9 @@ class FeedAdapter(
             binding.ivReadNews.setImageDrawable(
                 ContextCompat.getDrawable(
                     binding.root.context,
-                    if (feed.read){
+                    if (feed.read) {
                         R.drawable.ic_bookmark_read
-                    }else{
+                    } else {
                         R.drawable.ic_bookmark
                     }
                 )

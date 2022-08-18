@@ -54,8 +54,7 @@
             app:layout_constraintHorizontal_bias="0.367"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmail"
-            app:layout_constraintVertical_bias="0.0"
-            />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvLock"
@@ -86,8 +85,7 @@
             android:paddingEnd="@dimen/margin_12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLock"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/tvLock" />
 
         <Button
             android:id="@+id/bEnter"
@@ -120,8 +118,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_36"
-            android:text="@string/ou"
             android:gravity="center"
+            android:text="@string/ou"
             android:textColor="@color/orange"
             android:textSize="@dimen/text_size_14"
             android:textStyle="bold"
@@ -133,8 +131,8 @@
             android:id="@+id/view2"
             android:layout_width="@dimen/width_140"
             android:layout_height="@dimen/height_5"
-            android:layout_marginTop="@dimen/margin_44"
             android:layout_marginStart="@dimen/margin_2"
+            android:layout_marginTop="@dimen/margin_44"
             android:layout_marginEnd="@dimen/margin_49"
             android:background="@color/blue"
             app:layout_constraintEnd_toEndOf="@+id/bEnter"
@@ -159,8 +157,8 @@
             android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_20"
             android:layout_marginStart="@dimen/margin_2"
+            android:layout_marginTop="@dimen/margin_20"
             android:text="@string/cadastre_se"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_18"

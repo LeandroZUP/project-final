@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class PillarsViewModel: ViewModel() {
+class PillarsViewModel : ViewModel() {
     private val pillarsUseCase = PillarsUseCase()
 
     private val _listState = MutableLiveData<ViewState<List<Pillar>>>()
@@ -32,7 +32,7 @@ class PillarsViewModel: ViewModel() {
             } catch (ex: Exception) {
                 _listState.value =
                     ViewState.Error(Throwable(ERRO_API_PILLARS))
-            }finally {
+            } finally {
                 _loading.value = ViewState.Loading(false)
             }
         }

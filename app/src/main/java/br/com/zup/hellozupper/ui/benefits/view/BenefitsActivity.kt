@@ -74,7 +74,7 @@ class BenefitsActivity : AppCompatActivity() {
             putExtra(KEY_BENEFITS, benefits)
         }
         startActivity(intent)
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     private fun supportActionBar() {

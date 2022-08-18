@@ -23,4 +23,4 @@ data class Benefits(
     val id: Int,
     @SerializedName("title")
     val title: String
-): Parcelable
+) : Parcelable
