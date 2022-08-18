@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class BenefitsViewModel: ViewModel() {
+class BenefitsViewModel : ViewModel() {
     private val benefitsUseCase = BenefitsUseCase()
 
     private val _listState = MutableLiveData<ViewState<List<Benefits>>>()

@@ -10,7 +10,6 @@ import br.com.zup.hellozupper.ui.home.view.HomeActivity
 import br.com.zup.hellozupper.ui.login.viewmodel.LoginViewModel
 import br.com.zup.hellozupper.ui.register.view.RegisterActivity
 import br.com.zup.hellozupper.utils.LOGIN_ERROR_MESSAGE
-import br.com.zup.hellozupper.utils.USER_KEY
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
@@ -57,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initObservers() {
         viewModel.loginState.observe(this) {
-            if(it){
+            if (it) {
                 goToHome()
             } else {
                 Snackbar.make(binding.root, LOGIN_ERROR_MESSAGE, Snackbar.LENGTH_LONG).show()

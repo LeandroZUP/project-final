@@ -27,7 +27,8 @@ class BenefitsDetailsActivity : AppCompatActivity() {
                 it.descriptionThree,
                 it.descriptionFour,
                 it.descriptionFive,
-                it.descriptionSix)
+                it.descriptionSix
+            )
             supportActionBar(it.title)
         }
     }

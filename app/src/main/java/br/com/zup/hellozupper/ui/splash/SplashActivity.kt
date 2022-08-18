@@ -28,9 +28,9 @@ class SplashActivity : AppCompatActivity() {
 
     private fun jump() {
         timer.cancel()
-        if(user.currentUser != null) {
+        if (user.currentUser != null) {
             startActivity(Intent(this, HomeActivity::class.java))
-        }else {
+        } else {
             startActivity(Intent(this, LoginActivity::class.java))
         }
         this.finish()

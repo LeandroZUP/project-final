@@ -20,8 +20,10 @@ class BenefitsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
-            BenefitsItemBinding.inflate(LayoutInflater.from(parent.context),
-                parent, false)
+            BenefitsItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false
+            )
         return ViewHolder(binding)
     }
 
@@ -32,6 +34,7 @@ class BenefitsAdapter(
             clickBenefits(benefits)
         }
     }
+
     override fun getItemCount() = benefitsList.size
 
     @SuppressLint("NotifyDataSetChanged")
