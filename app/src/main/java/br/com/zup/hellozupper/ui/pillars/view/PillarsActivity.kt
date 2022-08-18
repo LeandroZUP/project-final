@@ -74,8 +74,9 @@ class PillarsActivity : AppCompatActivity() {
             putExtra(KEY_PILLAR, pillar)
         }
         startActivity(intent)
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
+
     private fun supportActionBar() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = NOSSO_DNA
