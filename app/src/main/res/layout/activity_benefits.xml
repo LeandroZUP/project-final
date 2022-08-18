@@ -8,15 +8,30 @@
     android:layout_width="match_parent"
     tools:context=".ui.benefits.view.BenefitsActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBenefitsButtons"
-        android:layout_height="@dimen/margin_250"
-        android:layout_margin="@dimen/margin_8"
-        android:layout_width="@dimen/margin_250"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_marginTop="@dimen/margin_16"
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="@dimen/dimen_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerInside"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/shining_star"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBenefitsButtons"
+        android:layout_width="@dimen/margin_250"
+        android:layout_height="@dimen/margin_250"
+        android:layout_margin="@dimen/margin_8"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
         tools:itemCount="4"
         tools:listitem="@layout/benefits_item" />
 

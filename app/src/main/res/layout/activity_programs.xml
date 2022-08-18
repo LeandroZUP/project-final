@@ -8,6 +8,19 @@
     android:background="@drawable/background_world"
     tools:context=".ui.programs.view.ProgramsActivity">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="@dimen/dimen_200"
+        android:layout_marginTop="@dimen/margin_16"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/spaceship_up" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPrograms"
         android:layout_width="@dimen/margin_250"
