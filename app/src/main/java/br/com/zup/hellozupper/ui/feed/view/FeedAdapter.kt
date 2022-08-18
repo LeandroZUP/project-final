@@ -8,7 +8,6 @@ import br.com.zup.hellozupper.R
 import br.com.zup.hellozupper.data.model.Feed
 import br.com.zup.hellozupper.data.model.FeedEntity
 import br.com.zup.hellozupper.databinding.FeedItemBinding
-import com.squareup.picasso.Picasso
 
 class FeedAdapter(
     private var feedList: MutableList<Feed> = mutableListOf(),

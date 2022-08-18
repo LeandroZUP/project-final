@@ -25,7 +25,7 @@
     <string name="feed_text">Feed</string>
     <string name="cv_check">Check verde</string>
     <string name="benefit_description">Descrição do benefício aqui. Segunda linha da desc</string>
-    <string name="description_image_home">Imagem com o símbolo do whatsapp, escrito ao lado: fale com o tio CAZ.</string>
+    <string name="description_image_home">Imagem com um fundo verde e dentro dele tem o símbolo do whatsapp e uma frase escrito, fale com o tio CAZ.</string>
     <string name="sem_conexao_a_internet">Sem conexão a internet</string>
     <string name="descricao_imagem">Um desenho de uma mulher sentado em um foguete, segurando uma bandeira verde com o simbolo da zup .</string>
     <string name="vai_que_da">Vai que dá, confia!</string>
@@ -43,4 +43,7 @@
     <string name="tv_description_five">Descrição5</string>
     <string name="tv_description_six">Descrição6</string>
     <string name="exit">Exit</string>
+    <string name="Project">Projetos</string>
+    <string name="em_breve">Em breve,</string>
+    <string name="novidades">novidades!</string>
 </resources>

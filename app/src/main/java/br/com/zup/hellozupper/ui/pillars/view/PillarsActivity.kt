@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.view.isVisible
+import br.com.zup.hellozupper.data.model.Pillar
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.zup.hellozupper.data.model.Pillar
 import br.com.zup.hellozupper.databinding.ActivityPillarsBinding
 import br.com.zup.hellozupper.ui.detailpillars.view.DetailPillarsActivity
 import br.com.zup.hellozupper.ui.pillars.viewmodel.PillarsViewModel
@@ -74,8 +74,9 @@ class PillarsActivity : AppCompatActivity() {
             putExtra(KEY_PILLAR, pillar)
         }
         startActivity(intent)
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
+
     private fun supportActionBar() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = NOSSO_DNA

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.zup.hellozupper.R
-import br.com.zup.hellozupper.ui.feed.view.FeedActivity
 import br.com.zup.hellozupper.ui.home.view.HomeActivity
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import com.google.firebase.auth.FirebaseAuth

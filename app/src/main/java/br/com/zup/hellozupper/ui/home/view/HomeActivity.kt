@@ -16,8 +16,8 @@ import br.com.zup.hellozupper.ui.home.viewmodel.HomeViewModel
 import br.com.zup.hellozupper.ui.login.view.LoginActivity
 import br.com.zup.hellozupper.ui.pillars.view.PillarsActivity
 import br.com.zup.hellozupper.ui.programs.view.ProgramsActivity
+import br.com.zup.hellozupper.ui.project.view.ProjectActivity
 import br.com.zup.hellozupper.utils.HELLO
-import java.lang.System.exit
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -36,6 +36,13 @@ class HomeActivity : AppCompatActivity() {
         clickOnButtonFeed()
         clickOnButtonProgram()
         clickOnImageWhatsapp()
+        clickOnButtonProject()
+    }
+
+    private fun clickOnButtonProject() {
+        binding.btnProject.setOnClickListener {
+            goToProject()
+        }
     }
 
     private fun clickOnButtonOurDNA() {
@@ -46,6 +53,10 @@ class HomeActivity : AppCompatActivity() {
 
     private fun goToDNA() {
         startActivity(Intent(this, PillarsActivity::class.java))
+    }
+
+    private fun goToProject() {
+        startActivity(Intent(this, ProjectActivity::class.java))
     }
 
     private fun clickOnButtonBenefit() {
@@ -108,7 +119,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId){
+        return when (item.itemId) {
             R.id.exit -> {
                 viewModel.logoutUser()
                 goToLogin()

@@ -15,7 +15,7 @@
             android:id="@+id/btnDna"
             android:layout_width="@dimen/margin_250"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="@color/red"
             android:text="@string/nosso_dna_text"
             android:layout_marginTop="@dimen/margin_156"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +52,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnFeed" />
 
+        <Button
+            android:id="@+id/btnProject"
+            android:layout_width="@dimen/margin_250"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="@string/Project"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPrograms" />
+
         <ImageView
             android:id="@+id/ivWhatsapp"
             android:layout_width="wrap_content"
@@ -60,7 +70,7 @@
             android:layout_marginTop="@dimen/margin_48"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnPrograms"
+            app:layout_constraintTop_toBottomOf="@+id/btnProject"
             app:srcCompat="@drawable/ic_whatsap" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
