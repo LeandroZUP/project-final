@@ -25,10 +25,12 @@
         android:layout_width="@dimen/margin_250"
         android:layout_height="@dimen/margin_250"
         android:layout_margin="@dimen/margin_8"
+        android:layout_marginTop="142dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
+        app:layout_constraintVertical_bias="0.2"
         tools:itemCount="4"
         tools:listitem="@layout/programs_item" />
 
