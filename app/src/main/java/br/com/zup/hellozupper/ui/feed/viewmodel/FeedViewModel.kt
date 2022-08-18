@@ -12,6 +12,7 @@ import br.com.zup.hellozupper.ui.*
 import br.com.zup.hellozupper.ui.viewstate.ViewState
 import br.com.zup.hellozupper.utils.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -33,6 +34,23 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 val response = withContext(Dispatchers.IO) {
                     feedUseCase.getNewsNotRead()
+                }
+                _state.value = response
+            } catch (e: Exception) {
+                _state.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
+            } finally {
+                _loading.value = ViewState.Loading(false)
+            }
+        }
+    }
+
+
+    fun getAllNewsAPI() {
+        _loading.value = ViewState.Loading(true)
+        viewModelScope.launch {
+            try {
+                val response = withContext(Dispatchers.IO) {
+                    feedUseCase.getAllNewsAPI()
                 }
                 _state.value = response
             } catch (e: Exception) {
@@ -70,7 +88,6 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun getSearchNews(query: String) {
-        _loading.value = ViewState.Loading(true)
         viewModelScope.launch {
             try {
                 val response = withContext(Dispatchers.IO) {
@@ -79,8 +96,6 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
                 _state.value = response
             } catch (e: Exception) {
                 _state.value = ViewState.Error(Throwable(MESSAGE_FAIL_LOAD_NEWS_LIST))
-            } finally {
-                _loading.value = ViewState.Loading(false)
             }
         }
     }
