@@ -21,7 +21,10 @@ import com.google.android.material.snackbar.Snackbar
 
 class FeedActivity : AppCompatActivity() {
     private val adapter: FeedAdapter by lazy {
-        FeedAdapter(saveReadNews = this::saveReadNews, modifyReadNewsToNotRead = this::modifyReadNewsToNotRead)
+        FeedAdapter(
+            saveReadNews = this::saveReadNews,
+            modifyReadNewsToNotRead = this::modifyReadNewsToNotRead
+        )
     }
     private val viewModel: FeedViewModel by lazy {
         ViewModelProvider(this)[FeedViewModel::class.java]
@@ -49,11 +52,11 @@ class FeedActivity : AppCompatActivity() {
         viewModel.state.observe(this) {
             when (it) {
                 is ViewState.Success -> {
-                    if (it.data.isEmpty()){
+                    if (it.data.isEmpty()) {
                         binding.tvEmptyFeed.text = MESSAGE_EMPTY_NEWS_LIST
                         binding.lottieError.isVisible = true
                         binding.tvEmptyFeed.isVisible = true
-                    }else{
+                    } else {
                         binding.lottieError.isVisible = false
                         binding.tvEmptyFeed.isVisible = false
                     }
@@ -85,7 +88,7 @@ class FeedActivity : AppCompatActivity() {
         viewModel.saveReadNews(news)
     }
 
-    private fun modifyReadNewsToNotRead(news: FeedEntity){
+    private fun modifyReadNewsToNotRead(news: FeedEntity) {
         viewModel.modifyReadNewsToNotRead(news)
     }
 
@@ -98,7 +101,7 @@ class FeedActivity : AppCompatActivity() {
 
         searchView.isIconified = false
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 val searchString = searchView.query.toString()
                 viewModel.getSearchNews(searchString)
@@ -117,7 +120,7 @@ class FeedActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
+        return when (item.itemId) {
             R.id.search -> {
                 viewModel.getAllNewsAPI()
                 true
@@ -126,7 +129,9 @@ class FeedActivity : AppCompatActivity() {
                 finish()
                 true
             }
-            else -> {super.onOptionsItemSelected(item)}
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
         }
     }
 
