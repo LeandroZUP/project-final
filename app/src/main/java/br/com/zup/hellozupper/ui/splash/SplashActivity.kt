@@ -31,10 +31,8 @@ class SplashActivity : AppCompatActivity() {
         timer.cancel()
         if(user.currentUser != null) {
             startActivity(Intent(this, HomeActivity::class.java))
-
         }else {
             startActivity(Intent(this, LoginActivity::class.java))
-
         }
         this.finish()
     }

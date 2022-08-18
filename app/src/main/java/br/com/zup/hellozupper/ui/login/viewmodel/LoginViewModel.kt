@@ -12,8 +12,8 @@ import br.com.zup.hellozupper.domain.repository.AuthenticationRepository
 class LoginViewModel : ViewModel() {
     private val authenticationRepository = AuthenticationRepository()
 
-    private var _loginState = MutableLiveData<User>()
-    val loginState: LiveData<User> = _loginState
+    private var _loginState = MutableLiveData<Boolean>()
+    val loginState: LiveData<Boolean> = _loginState
 
     private var _errorState = MutableLiveData<String>()
     val errorState: LiveData<String> = _errorState
@@ -58,7 +58,7 @@ class LoginViewModel : ViewModel() {
                 user.email,
                 user.password
             ).addOnSuccessListener {
-                _loginState.value = user
+                _loginState.value = true
             }.addOnFailureListener {
                 _errorState.value = LOGIN_ERROR_MESSAGE
             }
